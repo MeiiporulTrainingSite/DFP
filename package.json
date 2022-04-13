@@ -1,0 +1,41 @@
+{
+  "dependencies": {
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "5.6.1",
+    "@mui/material": "latest",
+    "formik": "^2.2.9",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "5.3.0",
+    "react-scroll": "1.8.6",
+    "react-swipeable-views": "0.14.0",
+    "yup": "^0.32.11"
+  },
+  "description": "https://github.com/mui/material-ui/blob/v5.6.1/docs/data/material/components/tabs/DisabledTabs.js",
+  "devDependencies": {
+    "react-scripts": "latest"
+  },
+  "name": "dfp-project",
+  "title": "Diabetic Foot Proforma",
+  "keywords": [],
+  "version": "0.0.9",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
