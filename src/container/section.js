@@ -32,7 +32,7 @@ export default function Section() {
   }
 
   return (
-    <Paper square>
+    <Paper square sx={{width:'71vw'}}>
       <Tabs
         value={value}
         onChange={handleChange}
