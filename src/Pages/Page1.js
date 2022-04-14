@@ -66,7 +66,7 @@ export default function Page1() {
   ];
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit} style={{padding:"2rem"}}>
       <h3>Personal Information</h3>
       <TextField
         label="First Name"

@@ -37,9 +37,9 @@ export default function Section() {
         value={value}
         onChange={handleChange}
         aria-label="disabled tabs example"
+        sx={{ background: "#F2F1F1" }}
       >
         <Tab label="Section I" />
-
         <Tab label="Section II" />
       </Tabs>
       <TabPanel value={value} index={0}>

@@ -39,7 +39,7 @@ export default function NavBar(props) {
             height: "88vh",
             width: "15vw",
             paddingTop: "15vh",
-            backgroundColor: "rgb(125, 225, 210)"
+            backgroundColor: "#0AD0B2"
           }}
         >
           <CssBaseline />
