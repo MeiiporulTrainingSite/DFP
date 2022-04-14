@@ -6,7 +6,7 @@ export default function App() {
   return (
     <Paper
       sx={{
-        // background: `linear-gradient(45deg, rgba(13, 200,171, 0.693671) 15.79%, rgba(125, 225, 209, 0.7) 25%, rgba(255, 255, 255, 0.344) 40.96%, rgba(13, 200,171, 0.693671) 100%, rgba(125, 225, 209, 0.3) 15%)`,
+        background: `linear-gradient(45deg, rgba(13, 200,171, 0.693671) 15.79%, rgba(125, 225, 209, 0.7) 25%, rgba(255, 255, 255, 0.344) 40.96%, rgba(13, 200,171, 0.693671) 100%, rgba(125, 225, 209, 0.3) 15%)`,
         width: "90vw",
         height: "94vh",
         margin: "20px auto",
@@ -31,7 +31,7 @@ export default function App() {
         <Grid item>
           <NavBar />
         </Grid>
-        <Grid item sm={12} md={9}>
+        <Grid item  md={9}>
           <Section />
         </Grid>
       </Grid>

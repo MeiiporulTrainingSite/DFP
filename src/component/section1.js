@@ -29,7 +29,9 @@ export default function Section1() {
   );
   return (
     <Box sx={{ display: "flex" }}>
-      <Paper square sx={{ width: "15vw", p: 1, background: "#F2F1F1"  }}>
+
+      <Paper square sx={{ width: "35vw", p: 1, background: "#F2F1F1"  }}>
+
         {section1menu}
       </Paper>
       <ListRouter />
