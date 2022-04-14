@@ -67,11 +67,9 @@ export default function Page1() {
     }
   ];
   return (
-
-   
-
     
-    <form onSubmit={formik.handleSubmit} style={{padding:"1.5rem" }}>
+       <form onSubmit={formik.handleSubmit} style={{padding:"1.5rem" }}>
+
       <Typography variant='h4'sx={{mb:'1rem'}}>Personal Information</Typography>
            <Grid container spacing={2} >
                   <Grid item  md={6} xl={6}>
@@ -160,10 +158,8 @@ export default function Page1() {
       {formik.touched.Investigator && formik.errors.Investigator ? (
         <p>*{formik.errors.Investigator}*</p>
       ) : null}
-      </Grid>
-      
-      
-     <Grid item  md={6} xl={6}>
+      </Grid>    
+         <Grid item  md={6} xl={6}>
       <Textbox
         label="Email"
         type="text"
@@ -208,8 +204,6 @@ export default function Page1() {
         <p>*{formik.errors.Profession}*</p>
       ) : null}
       </Grid>
-
-
      <Grid item  md={6} lg={6}>
       <SelectCom
         select={select}
@@ -228,8 +222,7 @@ export default function Page1() {
         name="Dmselect"
         label="Duration of DM"
         InputLabel="Duration of DM"
-        onChange={formik.handleChange}
-              
+        onChange={formik.handleChange}              
       />
       {formik.touched.Dmselect && formik.errors.Dmselect ? (
         <p>*{formik.errors.Dmselect}*</p>
@@ -238,10 +231,9 @@ export default function Page1() {
       {/* </Grid>     */}
       {/* <Grid container align='right' sx={{}}>   */}
       <Grid item md={12} lg={12} align='right' >           
-      <Button type="submit" variant="contained" >Continue</Button>
+      <Button type="submit" sx={{backgroundColor: "#0AD0B2"}} >Continue</Button>
       </Grid>
-      </Grid>
-      
-    </form>
+      </Grid>      
+    </form> 
   );
 }
