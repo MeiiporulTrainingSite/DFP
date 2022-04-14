@@ -32,15 +32,15 @@ export default function Section() {
   }
 
   return (
-    <Paper square sx={{width:'71vw'}}>
+    <Paper square sx={{height:'86.3vh',width:'71vw'}}>
       <Tabs
         value={value}
         onChange={handleChange}
         aria-label="disabled tabs example"
         sx={{ background: "#F2F1F1" }}
       >
-        <Tab label="Section I" />
-        <Tab label="Section II" />
+        <Tab sx={{fontSize:"1.2rem"}} label="Section I" />
+        <Tab sx={{fontSize:"1.2rem"}} label="Section II" />
       </Tabs>
       <TabPanel value={value} index={0}>
         <Section1 />

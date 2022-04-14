@@ -36,7 +36,7 @@ export default function NavBar(props) {
         <Card
           sx={{
             display: { xs: "none", md: "block" },
-            height: "88vh",
+            height: "86.3vh",
             width: "15vw",
             paddingTop: "15vh",
             backgroundColor: "#0AD0B2"

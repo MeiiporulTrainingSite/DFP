@@ -16,10 +16,10 @@ export default function Section1() {
           <ListItem button sx={{ padding: "2px" }}>
             <Typography
               sx={{
-                fontSize: 13
+                fontSize: 13               
               }}
             >
-              <Link to={list.path}>{list.title} </Link>
+              <Link to={list.path} style={{ textDecoration: 'none' }} >{list.title} </Link>
             </Typography>
           </ListItem>
           {/* <Divider /> */}
