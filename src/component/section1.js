@@ -37,7 +37,8 @@ export default function Section1() {
     // <Box sx={{ display: "flex" }}>
       <Grid container>
         <Grid item lg ={3}>
-      <Paper square sx={{ p: 1, background: "#F2F1F1",  height: "79.9vh"  }}>
+      <Paper square sx={{ p: 1, background: "#F2F1F1" }}>
+      {/* height: "79.9vh"  */}
         {section1menu}
       </Paper>
       </Grid>

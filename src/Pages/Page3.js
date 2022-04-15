@@ -6,6 +6,7 @@ import SelectCom from "../component/Select";
 import Textbox from "../component/Textbox";
 import Grid from "@mui/material/Grid";
 import CheckBox from "../component/Checkbox";
+import "../App.css";
 
 export default function Page3() {
   const formik = useFormik({
@@ -164,14 +165,14 @@ export default function Page3() {
         <Grid item md={6} xl={6}>
           <RadioCom radio={canwalk} OnChange={formik.handleChange} FormLabel="Unsteadiness in walking" />
           {formik.touched.canwalk && formik.errors.canwalk ? (
-            <p>*{formik.errors.canwalk}*</p>
+            <p className="error">*{formik.errors.canwalk}*</p>
           ) : null}
         </Grid>
         <Grid item md={6} xl={6}>
           <RadioCom radio={burn} OnChange={formik.handleChange} FormLabel="Burning/Aching pain and
 Tenderness in legs" />
           {formik.touched.burn && formik.errors.burn ? (
-            <p>*{formik.errors.burn}*</p>
+            <p className="error">*{formik.errors.burn}*</p>
           ) : null}
         </Grid>
         <Grid item md={6} xl={6}>
@@ -179,13 +180,13 @@ Tenderness in legs" />
 or feet
 " />
           {formik.touched.prickling && formik.errors.prickling ? (
-            <p>*{formik.errors.prickling}*</p>
+            <p className="error">*{formik.errors.prickling}*</p>
           ) : null}
         </Grid>
         <Grid item md={6} xl={6}>
           <RadioCom radio={numbness} OnChange={formik.handleChange} FormLabel="Numbness" />
           {formik.touched.numbness && formik.errors.numbness ? (
-            <p>*{formik.errors.numbness}*</p>
+            <p className="error">*{formik.errors.numbness}*</p>
           ) : null}
         </Grid>
         <Grid item md={6} xl={6}>
@@ -200,7 +201,7 @@ or feet
             fullWidth
           />
           {formik.touched.DNStotal && formik.errors.DNStotal ? (
-            <p>*{formik.errors.DNStotal}*</p>
+            <p className="error">*{formik.errors.DNStotal}*</p>
           ) : null}
         </Grid>
         <Grid item md={6} lg={6}>
@@ -212,23 +213,28 @@ or feet
             onChange={formik.handleChange}
           />
           {formik.touched.FootatRisk && formik.errors.FootatRisk ? (
-            <p>*{formik.errors.FootatRisk}*</p>
+            <p className="error">*{formik.errors.FootatRisk}*</p>
           ) : null}
         </Grid>
         <Grid item md={6} xl={6}>
           <RadioCom radio={pvd} OnChange={formik.handleChange} FormLabel="Peripheral Vascular Disease" />
           {formik.touched.PVD && formik.errors.PVD ? (
-            <p>*{formik.errors.PVD}*</p>
+            <p className="error">*{formik.errors.PVD}*</p>
           ) : null}
         </Grid>
-        <Grid item md={6} xl={6}>
-          <CheckBox checkContent={claudifiaction} onChange={formik.handleChange} />
+        <Grid item md={12} xl={12}>
+          <CheckBox checkContent={claudifiaction} onChange={formik.handleChange} FormLabel="Claudification" />
           {formik.touched.Claudication && formik.errors.Claudication ? (
-            <p>*{formik.errors.Claudication}*</p>
+            <p className="error">*{formik.errors.Claudication}*</p>
           ) : null}
         </Grid>
         <Grid item md={12} lg={12} align='right' >
-          <Button type="submit" sx={{ backgroundColor: "#0AD0B2" }} >Continue</Button>
+          <Button type="submit" sx={{
+            backgroundColor: "#0AD0B2", color: "#fff", ":hover": {
+              border: "1px solid #0AD0B2",
+              color: "#0AD0B2"
+            }
+          }} >Continue</Button>
         </Grid>
       </Grid>
     </form>

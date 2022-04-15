@@ -2,11 +2,41 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button, Typography } from "@mui/material";
 // import RadioCom from "../component/Radio";
-import SelectCom from "../component/Selectdup";
+import SelectCom from "../component/Select";
 // import Textbox from "../component/Textbox";
 import Grid from "@mui/material/Grid";
+import CheckBox from "../component/Checkbox";
 
 import "../App.css";
+const claudifiaction = [
+    {
+      change: "",
+      value: "Rest pain",
+      name: "Claudication",
+      label: "Rest pain"
+    },
+    {
+      value: "Change in color",
+      name: "Claudication",
+      label: "Change in color"
+    },
+    {
+      value: "Gangrene",
+      name: "Claudication",
+      label: "Gangrene"
+    },
+    {
+      value: "Gangrene",
+      name: "Claudication",
+      label: "Gangrene"
+    },
+    {
+      value: "None",
+      name: "Claudication",
+      label: "None"
+    },
+
+  ];
 
 
 export default function Page4() {
@@ -75,8 +105,12 @@ export default function Page4() {
                         <p className="error">*{formik.errors.Select}*</p>
                     ) : null}
                 </Grid> 
-
-
+                <Grid item md={12} xl={12}>
+          <CheckBox checkContent={claudifiaction} onChange={formik.handleChange} FormLabel="Claudification" />
+          {formik.touched.Claudication && formik.errors.Claudication ? (
+            <p className="error">*{formik.errors.Claudication}*</p>
+          ) : null}
+        </Grid>
 
                 <Grid item md={12} lg={12} align="right">
                     <Button

@@ -1,7 +1,10 @@
-import { FormControlLabel, FormGroup, Checkbox } from "@mui/material";
+import { FormControl,FormLabel,FormControlLabel, FormGroup, Checkbox } from "@mui/material";
 export default function CheckBox(props) {
   return (
+    <FormControl>
+    <FormLabel >{props.FormLabel}</FormLabel>
     <FormGroup row onChange={props.onChange}>
+      
       {props.checkContent.map((check, i) => (
         <FormControlLabel
           key={i + 1}
@@ -10,5 +13,6 @@ export default function CheckBox(props) {
         />
       ))}
     </FormGroup>
+    </FormControl>
   );
 }
