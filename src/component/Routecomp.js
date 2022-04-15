@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { Route, Switch } from "react-router-dom";
 import Page1 from "../Pages/Page1";
 import Page2 from "../Pages/Page2";
+import Page3 from "../Pages/Page3";
 
 export default function ListRouter() {
   return (
@@ -12,6 +13,9 @@ export default function ListRouter() {
         </Route>
         <Route path="/DiabeticComplications">
           <Page2 />
+        </Route>
+        <Route path="/DNS Score">
+          <Page3 />
         </Route>
       </Switch>
     </Box>
