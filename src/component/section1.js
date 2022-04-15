@@ -25,7 +25,7 @@ export default function Section1() {
                 mb:"2.5px"  ,   
               }}
             >
-              <Link to={list.path} className="hoverLink"  >{list.title} </Link>
+              <Link to={list.path} className="hoverLink">{list.title} </Link>
             </Typography>
           </ListItem>
           {/* <Divider /> */}
@@ -37,7 +37,6 @@ export default function Section1() {
     <Box sx={{ display: "flex" }}>
 
       <Paper square sx={{ width: "35vw", p: 1, background: "#F2F1F1",  height: "79.9vh"  }}>
-
         {section1menu}
       </Paper>
       <ListRouter />
