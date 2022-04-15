@@ -20,8 +20,8 @@ export default function NavBar(props) {
         <Box key={i}>
           <Link to={list.path}>
             <ListItem button>
-              <ListItemIcon>{list.icon}</ListItemIcon>
-              <ListItemText primary={list.title} />
+              <ListItemIcon sx={{color:"#fff"}}>{list.icon}</ListItemIcon>
+              <ListItemText  primary={list.title} />
             </ListItem>
           </Link>
           <Divider />
@@ -61,7 +61,9 @@ export default function NavBar(props) {
               display: { xs: "none", md: "block" },
               position: "relative",
               marginTop: "5vh",
-              marginLeft: "2.5vh"
+              marginLeft: "2.5vh",
+              color:"#fff",
+           
             }}
           >
             <MenuItem>{drawer}</MenuItem>

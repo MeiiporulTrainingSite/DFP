@@ -8,7 +8,7 @@ export default function App() {
       sx={{
         background: `linear-gradient(45deg, rgba(13, 200,171, 0.693671) 15.79%, rgba(125, 225, 209, 0.7) 25%, rgba(255, 255, 255, 0.344) 40.96%, rgba(13, 200,171, 0.693671) 100%, rgba(125, 225, 209, 0.3) 15%)`,
         // width: "90vw",
-        height: "100vh",
+        // height: "100vh",
         
         display:'flex',
         
@@ -19,11 +19,14 @@ export default function App() {
     >  
       <Grid
         container
-        justifyContent='center' alignItems='center'
+        justifyContent='center'
+        m="7vh 0 6vh 0"
+
+        //  alignItems='center'
         sx={{
           padding: {
             //     xs: "13vh 0rem 0 1rem",
-            lg: "1rem 0rem 0 2rem"
+            lg: "0.3rem 0rem 0 2rem"
             //     xl: "6rem 0rem 0 7rem"
           },
           // transform: 'translate(-50%, -50%)'
