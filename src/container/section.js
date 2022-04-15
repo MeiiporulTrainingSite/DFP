@@ -2,25 +2,19 @@ import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { Paper, Box, Typography } from "@mui/material";
-import { makeStyles,createTheme,ThemeProvider } from "@mui/material/styles";
+import { createTheme,ThemeProvider } from "@mui/material/styles";
 
 import Section1 from "../component/section1";
 import Section2 from "../component/section2";
 
 
-// const theme = createTheme({
-//   palette: {
-//     primary: {
-//       light: '#757ce',
-//       main: '#3f50b5',
-//       dark: '#002884',
-//       contrastText: '#fff',
-//     },
-//     secondary: {
-//       main:"blue"
-//     },
-//   },
-// });
+const theme = createTheme({
+  palette: {
+    primary: { 
+    main: '#0AD0B2',
+   }
+ },
+});
 export default function Section() {
   const [value, setValue] = React.useState(0);
 
@@ -49,14 +43,14 @@ export default function Section() {
   }
 
   return (
-    // <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
     <Paper square sx={{ width: "71vw" }}>
 
       <Tabs
         value={value}
         onChange={handleChange}
-        // textColor="primary"
-        // indicatorColor="secondary"
+        textColor="primary"
+        indicatorColor="primary"
         aria-label="disabled tabs example"
         sx={{ background: "#F2F1F1" }}
         
@@ -81,6 +75,6 @@ export default function Section() {
         <Section2 />
       </TabPanel>
     </Paper>
-    //  </ThemeProvider>
+    </ThemeProvider>
   );
 }
