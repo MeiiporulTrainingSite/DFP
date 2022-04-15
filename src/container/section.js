@@ -44,7 +44,7 @@ export default function Section() {
 
   return (
     <ThemeProvider theme={theme}>
-    <Paper square sx={{ width: "71vw" }}>
+    <Paper square >
 
       <Tabs
         value={value}

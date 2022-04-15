@@ -10,7 +10,7 @@ import { createTheme,ThemeProvider } from "@mui/material/styles";
 export default function SelectCom(props) {
   return (
     // <ThemeProvider theme={theme}>
-    <FormControl style={{minWidth: 750}} >
+    <FormControl sx = {{minWidth:'100%'}}  >
       <InputLabel>{props.InputLabel}</InputLabel>
       <Select name={props.name} label={props.label} onChange={props.onChange} >
         {props.select.map((data, i) => (

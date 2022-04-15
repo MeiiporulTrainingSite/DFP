@@ -2,7 +2,7 @@ import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Box from "@mui/material/Box";
-import { Paper, Typography,makeStyles } from "@mui/material";
+import { Grid,Paper, Typography,makeStyles } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import { menu1 } from "../data/index";
@@ -34,12 +34,18 @@ export default function Section1() {
     </List>
   );
   return (
-    <Box sx={{ display: "flex" }}>
-
-      <Paper square sx={{ width: "35vw", p: 1, background: "#F2F1F1",  height: "79.9vh"  }}>
+    // <Box sx={{ display: "flex" }}>
+      <Grid container>
+        <Grid item lg ={3}>
+      <Paper square sx={{ p: 1, background: "#F2F1F1",  height: "79.9vh"  }}>
         {section1menu}
       </Paper>
+      </Grid>
+      <Grid item lg={9}>
       <ListRouter />
-    </Box>
+      </Grid>
+      
+      </Grid>
+    // </Box>
   );
 }

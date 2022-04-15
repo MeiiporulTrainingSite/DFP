@@ -15,11 +15,12 @@ export default function ListRouter() {
         <Route path="/DiabeticComplications">
           <Page2 />
         </Route>
-        <Route path="/RutherfordGrade">
-          <Page4 />
         <Route path="/DNS Score">
           <Page3 />
         </Route>
+        <Route path="/RutherfordGrade">
+          <Page4 />
+       </Route>
       </Switch>
     </Box>
   );
