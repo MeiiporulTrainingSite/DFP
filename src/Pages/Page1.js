@@ -107,7 +107,7 @@ export default function Page1() {
      
                   <Grid item  md={6} xl={6}>
 
-<RadioCom radio={radio} OnChange={formik.handleChange} />
+<RadioCom radio={radio} OnChange={formik.handleChange} FormLabel="Gender" />
       {formik.touched.Radio && formik.errors.Radio ? (
         <p>*{formik.errors.Radio}*</p>
       ) : null}
@@ -124,12 +124,8 @@ export default function Page1() {
       {formik.touched.Date && formik.errors.Date ? (
         <p>*{formik.errors.Date}*</p>
       ) : null}
-      </Grid>
-     
-
-      
-      
-                  <Grid item  md={6} xl={6}>
+      </Grid>          
+ <Grid item  md={6} xl={6}>
 <Textbox
         label="Hospital name"
         type="text"
@@ -158,8 +154,10 @@ export default function Page1() {
       {formik.touched.Investigator && formik.errors.Investigator ? (
         <p>*{formik.errors.Investigator}*</p>
       ) : null}
-      </Grid>    
-         <Grid item  md={6} xl={6}>
+      </Grid>
+      
+      
+     <Grid item  md={6} xl={6}>
       <Textbox
         label="Email"
         type="text"
