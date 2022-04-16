@@ -42,12 +42,12 @@ export default function Page1() {
   const radio = [
     {
       value: "female",
-      label: "female",
+      label: "Female",
       name: "Radio",
     },
     {
       value: "male",
-      label: "male",
+      label: "Male",
       name: "Radio",
     },
   ];
