@@ -198,13 +198,13 @@ export default function Page2() {
         <p className="error">*{formik.errors.Motor}*</p>
       ) : null}
       </Grid>
-      <Grid item  md={6} lg={6}>
+      <Grid item  md={12} lg={12}>
        <CheckBox checkContent={autonomic} onChange={formik.handleChange} FormLabel="Autonomic Neuropathy"/>
       {formik.touched.Autonomic && formik.errors.Autonomic ? (
         <p className="error">*{formik.errors.Autonomic}*</p>
       ) : null}
       </Grid>
-      <Grid item  md={6} xl={6}>
+      <Grid item  md={12} xl={12}>
 <RadioCom radio={sensory} OnChange={formik.handleChange} FormLabel="Sensory" />
       {formik.touched.Sensory && formik.errors.Sensory ? (
         <p className="error">*{formik.errors.Sensory}*</p>

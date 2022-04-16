@@ -4,6 +4,7 @@ export default function CheckBox(props) {
     <FormControl>
     <FormLabel id="demo-radio-buttons-group-label">{props.FormLabel}</FormLabel>
     <FormGroup row onChange={props.onChange}>
+      
       {props.checkContent.map((check, i) => (
         <FormControlLabel
           key={i + 1}

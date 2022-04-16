@@ -14,8 +14,8 @@ export default function Sample() {
       Radio: Yup.string().required("Required"),
       LastName: Yup.array()
         .required("required")
-        .max(2, "only two")
-        .min(1, "atleast one")
+        .max(2, "Please check only two")
+        .min(1, " Please check atleast one")
     }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
