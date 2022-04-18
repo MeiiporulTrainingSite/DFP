@@ -84,7 +84,7 @@ export default function Page1() {
       <Typography variant="h4" sx={{ mb: "1rem" }}>
         Personal Information
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={3} columnSpacing={1.5}>
         <Grid item md={6} xl={6}>
           <Textbox
             label="Name"

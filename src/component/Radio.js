@@ -9,7 +9,7 @@ import {
    export default function RadioCom(props) {
      return (
        <FormControl>
-         <FormLabel id="demo-radio-buttons-group-label">{props.FormLabel}</FormLabel>
+         <FormLabel sx={{color:"#0AD0B2"}} id="demo-radio-buttons-group-label">{props.FormLabel}</FormLabel>
          <RadioGroup
            row
            aria-labelledby="demo-radio-buttons-group-label"

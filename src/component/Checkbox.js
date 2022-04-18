@@ -2,7 +2,7 @@ import {FormControl,FormLabel, FormControlLabel, FormGroup, Checkbox } from "@mu
 export default function CheckBox(props) {
   return (
     <FormControl>
-    <FormLabel id="demo-radio-buttons-group-label">{props.FormLabel}</FormLabel>
+    <FormLabel sx={{color:"#0AD0B2"}} id="demo-radio-buttons-group-label">{props.FormLabel}</FormLabel>
     <FormGroup row onChange={props.onChange}>
       
       {props.checkContent.map((check, i) => (

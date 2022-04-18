@@ -189,7 +189,7 @@ or feet
             <p className="error">*{formik.errors.numbness}*</p>
           ) : null}
         </Grid>
-        <Grid item md={6} xl={6}>
+        <Grid item md={3} xl={3}>
           <Textbox
             label="Grade Total"
             type="text"
@@ -204,7 +204,7 @@ or feet
             <p className="error">*{formik.errors.DNStotal}*</p>
           ) : null}
         </Grid>
-        <Grid item md={6} lg={6}>
+        <Grid item md={10} lg={10}>
           <SelectCom
             select={footrisk}
             name="FootatRisk"

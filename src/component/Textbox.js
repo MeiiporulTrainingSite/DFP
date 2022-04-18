@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
 export default function Textbox(props) {
   return (    
-    <TextField
+    <TextField sx={{height:"6.5vh"}}
         label={props.label}
         type={props.type}
         name={props.name}
