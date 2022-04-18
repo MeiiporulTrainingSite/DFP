@@ -1,12 +1,10 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button, Typography } from "@mui/material";
-import RadioCom from "../component/Radio";
 import SelectCom from "../component/Select";
 import Textbox from "../component/Textbox";
 import Grid from "@mui/material/Grid";
 import CheckBox from "../component/Checkbox";
-
 
 import "../App.css";
 const rutherGrade = [
@@ -71,7 +69,6 @@ const cad = [
         name: "cad",
         label: "None"
     },
-
 ];
 const stroke = [
     {
@@ -89,7 +86,7 @@ const stroke = [
         name: "stroke",
         label: "Others"
     }
-
+ 
 ];
 const htn = [
     {
@@ -132,39 +129,26 @@ const htn = [
 ];
 const smoker = [
     {
-        value: "yes",
-        label: "Yes",
+        value: "smoker",
+        label: "Smoker",
         name: "smoker",
     },
     {
-        value: "no",
-        label: "No",
+        value: "alcoholic",
+        label: "Alcoholic",
+        name: "alcoholic",
+    },
+    {
+        value: "tobaccoChewing",
+        label: "Tobacco Chewing",
+        name: "tobaccoChewing",
+    },
+    { 
+        value: "None",
         name: "smoker",
-    },
-];
-const alcoholic = [
-    {
-        value: "yes",
-        label: "Yes",
-        name: "alcoholic",
-    },
-    {
-        value: "no",
-        label: "No",
-        name: "alcoholic",
-    },
-];
-const tobaccoChewing = [
-    {
-        value: "yes",
-        label: "Yes",
-        name: "tobaccoChewing",
-    },
-    {
-        value: "no",
-        label: "No",
-        name: "tobaccoChewing",
-    },
+        label: "None"
+    }
+   
 ];
 
 export default function Page4() {
@@ -192,8 +176,7 @@ export default function Page4() {
                 .required("Required")
                 .min(1, " Please check atleast one"),
             smoker: Yup.string().required("Required"),
-            alcoholic: Yup.string().required("Required"),
-            tobaccoChewing: Yup.string().required("Required"),
+            
             historyPresentUlcer: Yup.string().required("Required"),
 
         }),
@@ -207,7 +190,7 @@ export default function Page4() {
     return (
 
         <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem" }}>
-            <Typography variant="h6" >
+            <Typography variant='h4' >
                 Rutherford Grade (PAD)
             </Typography>
             <Grid container spacing={2}>
@@ -216,7 +199,7 @@ export default function Page4() {
                         select={rutherGrade}
                         name="rutherfordGrade"
                         label="Rutherford Grade"
-                        InputLabel="RutherfordGrade"
+                        InputLabel="Rutherford Grade"
                         onChange={formik.handleChange}
                     />
                     {formik.touched.rutherfordGrade && formik.errors.rutherfordGrade ? (
@@ -245,28 +228,17 @@ export default function Page4() {
                     ) : null}
                 </Grid>
                 <Grid item md={12} lg={12}>
-                    <Typography variant="h6" >
+                    <Typography variant='h4' >
                        Personal History
                     </Typography></Grid>
 
-                <Grid item md={4} lg={4}>
-                    <RadioCom radio={smoker} OnChange={formik.handleChange} FormLabel="Smoker" />
+                <Grid item md={12} lg={12}>
+                <CheckBox checkContent={smoker} onChange={formik.handleChange}  />
                     {formik.touched.smoker && formik.errors.smoker ? (
                         <p className="error">*{formik.errors.smoker}*</p>
                     ) : null}
                 </Grid>
-                <Grid item md={4} lg={4}>
-                    <RadioCom radio={alcoholic} OnChange={formik.handleChange} FormLabel="Alcoholic" />
-                    {formik.touched.alcoholic && formik.errors.alcoholic ? (
-                        <p className="error">*{formik.errors.alcoholic}*</p>
-                    ) : null}
-                </Grid>
-                <Grid item md={4} lg={4}>
-                    <RadioCom radio={tobaccoChewing} OnChange={formik.handleChange} FormLabel="Tobacco Chewing" />
-                    {formik.touched.tobaccoChewing && formik.errors.tobaccoChewing ? (
-                        <p className="error">*{formik.errors.tobaccoChewing}*</p>
-                    ) : null}
-                </Grid>
+                
 
                 <Grid item md={6} xl={6}>
                     <Textbox
