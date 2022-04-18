@@ -3,9 +3,6 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { Paper, Box, Typography } from "@mui/material";
 import { createTheme,ThemeProvider } from "@mui/material/styles";
-import GlobalStyles from '@mui/material/GlobalStyles';
-import darkScrollbar from '@mui/material/darkScrollbar';
-
 import Section1 from "../component/section1";
 import Section2 from "../component/section2";
 
@@ -47,7 +44,6 @@ export default function Section() {
   return (
     <ThemeProvider theme={theme}>
     <Paper square >
-
       <Tabs
         value={value}
         onChange={handleChange}
@@ -70,9 +66,7 @@ export default function Section() {
  
         />
       </Tabs>
-      <TabPanel value={value} index={0}  >
-      
-      
+      <TabPanel value={value} index={0}>    
         <Section1 />
       </TabPanel>
       <TabPanel value={value} index={1}>
