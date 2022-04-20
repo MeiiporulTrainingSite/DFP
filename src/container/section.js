@@ -49,7 +49,6 @@ export default function Section() {
     <ThemeProvider theme={theme}>
      
     <Paper square >
-
       <Tabs
         value={value}
         onChange={handleChange}
