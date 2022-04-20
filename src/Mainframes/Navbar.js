@@ -11,7 +11,8 @@ import { Link } from "react-scroll";
 import * as React from "react";
 import { Paper } from "@mui/material";
 import { MenuList, MenuItem } from "@mui/material";
-import logo from "../Images/logo.jpg";
+import logo from "../Images/Profile.jpg";
+import "../App.css";
 
 export default function NavBar(props) {
   const drawer = (
@@ -32,13 +33,14 @@ export default function NavBar(props) {
 
   return (
     <>
+    <CssBaseline/>
       <Paper sx={{ display: "flex" }}>
         <Card
           sx={{
             display: { xs: "none", md: "block" },
-            height: "86.3vh",
-            width: "15vw",
-            paddingTop: "15vh",
+            height: "100vh",
+            width: "20vw",
+            // paddingTop: "15vh",
             backgroundColor: "#0AD0B2"
           }}
         >
@@ -48,11 +50,11 @@ export default function NavBar(props) {
             src={logo}
             alt="logo"
             style={{
-              width: "120px",
-              height: "100px",
+              width: "190px",
+              height: "150px",
               position: "relative",
               top: "35px",
-              left: "23%",
+              left: "5%",
               borderRadius: "13px"
             }}
           />

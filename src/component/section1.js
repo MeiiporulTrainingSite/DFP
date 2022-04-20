@@ -36,17 +36,18 @@ export default function Section1() {
   );
   return (
     // <Box sx={{ display: "flex" }}>
-      <Grid container  >
-        <Grid item lg ={3}>
-      <Paper square sx={{ p: 1, background: "#F2F1F1",height: "79.9vh" }}>
+      <Grid container   >
+        <Grid item lg ={2.5}>
+      <Paper square sx={{ p: 1, background: "#F2F1F1",height: "95vh" }}>
       {/* height: "79.9vh"  */}
         {section1menu}
       </Paper>
       </Grid>
-      <Grid item lg={9}>
+      <Grid item lg={9.5}>
       <Box  sx={{
-        height: "79.9vh",
-          
+        height: "95vh",
+       
+      
           "&::-webkit-scrollbar": {
             width: 10
           },
