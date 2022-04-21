@@ -1,12 +1,12 @@
 import NavBar from "./Mainframes/Navbar";
 import Section from "./container/section";
-import { Paper, Grid,CssBaseline } from "@mui/material";
+import { Paper, Grid,ScopedCssBaseline } from "@mui/material";
 import "./App.css"
 
 export default function App() {
   return (
     <>
-    <CssBaseline/>
+    <ScopedCssBaseline/>
     <Paper
       sx={{ 
         

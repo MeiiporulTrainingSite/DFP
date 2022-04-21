@@ -156,7 +156,7 @@ export default function Page2() {
    
 //  }
   return (
-    <form onSubmit={formik.handleSubmit} >
+    <form onSubmit={formik.handleSubmit} style={{padding:"1.5rem"}}>
       <Typography variant="h4" sx={{ mb: "1rem" }}>
         DIABETIC COMPLICATIONS
       </Typography>

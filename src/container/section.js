@@ -1,7 +1,7 @@
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { Paper, Box, Typography,CssBaseline } from "@mui/material";
+import { Paper, Box, Typography,ScopedCssBaseline, } from "@mui/material";
 import { createTheme,ThemeProvider } from "@mui/material/styles";
 import GlobalStyles from '@mui/material/GlobalStyles';
 import darkScrollbar from '@mui/material/darkScrollbar';
@@ -72,7 +72,7 @@ export default function Section() {
         />
       </Tabs>
       <TabPanel value={value} index={0}  >
-      <CssBaseline/>
+      <ScopedCssBaseline/>
       
         <Section1 />
       </TabPanel>

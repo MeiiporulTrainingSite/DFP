@@ -265,10 +265,24 @@ export default function Page1() {
               color: "#0AD0B2"
             } }}
           >
-             {/* <Link to ="/DiabeticComplications"></Link> */}
-            Continue
+           
+           Save
             
           </Button>
+          <Link to ="/DiabeticComplications">
+          <Button
+           
+            // onClick={onClick}
+            sx={{ backgroundColor: "#0AD0B2", color: "#fff", ":hover": {
+              border:"1px solid #0AD0B2",
+              color: "#0AD0B2"
+            } }}
+          >
+           
+           next
+            
+          </Button>
+          </Link>
          
 
         </Grid>
