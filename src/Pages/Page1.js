@@ -5,10 +5,15 @@ import RadioCom from "../component/Radio";
 import SelectCom from "../component/Select";
 import Textbox from "../component/Textbox";
 import Grid from "@mui/material/Grid";
+import  {useDispatch,useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
 import "../App.css";
 
 export default function Page1() {
+  const dispatch=useDispatch();
+  const selector = useSelector((state) => state.storeData);
+  let data={}
   const formik = useFormik({
     initialValues: {
       Name: "",
@@ -35,9 +40,11 @@ export default function Page1() {
       Age: Yup.number().required("Required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      dispatch({type:"storeData",data:values})
+      // alert(JSON.stringify(values, null, 2));
     },
   });
+  console.log(selector)
 
   const radio = [
     {
@@ -79,8 +86,15 @@ export default function Page1() {
       item: "more than 10 years",
     },
   ];
+ 
+  // function onClick(){
+  //    dispatch({type:"storeData",data:data})
+    
+  // }
   return (
-    <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem" }}>
+ 
+    <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem", }}>
+        
       <Typography variant="h4" sx={{ mb: "1rem" }}>
         Personal Information
       </Typography>
@@ -242,15 +256,35 @@ export default function Page1() {
         {/* </Grid>     */}
         {/* <Grid container align='right' sx={{}}>   */}
         <Grid item md={12} lg={12} align="right">
+         
           <Button
             type="submit"
+            // onClick={onClick}
             sx={{ backgroundColor: "#0AD0B2", color: "#fff", ":hover": {
               border:"1px solid #0AD0B2",
               color: "#0AD0B2"
             } }}
           >
-            Continue
+           
+           Save
+            
           </Button>
+          <Link to ="/DiabeticComplications">
+          <Button
+           
+            // onClick={onClick}
+            sx={{ backgroundColor: "#0AD0B2", color: "#fff", ":hover": {
+              border:"1px solid #0AD0B2",
+              color: "#0AD0B2"
+            } }}
+          >
+           
+           next
+            
+          </Button>
+          </Link>
+         
+
         </Grid>
       </Grid>
     </form>
