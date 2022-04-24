@@ -11,30 +11,30 @@ export default function Dpage1() {
     initialValues: {
       Dexa_RT_Tscore: "",
       Dexa_RT_Zscore: "",
-
-      Intervention_ltsite_1week: "",
-      Intervention_rtsite_2week: "",
-      Intervention_ltsite_2week: "",
-      Intervention_rtsite_3week: "",
-      Intervention_ltsite_3week: "",
-      Intervention_rtsite_4week: "",
-      Intervention_ltsite_4week: "",
-      Intervention_rtsite_FU: "",
-      Intervention_ltsite_FU: "",
+      Dexa_LT_Tscore: "",
+      Dexa_LT_Zscore: "",
+      Vertebra_RT_Tscore: "",
+      Vertebra_RT_Zscore: "",
+      Vertebra_LT_Tscore: "",
+      Vertebra_LT_Zscore: "",
+      Hip_RT_Tscore: "",
+      Hip_RT_Zscore: "",
+      Hip_LT_Tscore: "",
+      Hip_LT_Zscore: "",
     },
     validationSchema: Yup.object({
-      Baseline_rtsite: Yup.string().required("Required"),
-      Baseline_ltsite: Yup.string().required("Required"),
-      Intervention_rtsite_1week: Yup.string().required("Required"),
-      Intervention_ltsite_1week: Yup.string().required("Required"),
-      Intervention_rtsite_2week: Yup.string().required("Required"),
-      Intervention_ltsite_2week: Yup.string().required("Required"),
-      Intervention_rtsite_3week: Yup.string().required("Required"),
-      Intervention_ltsite_3week: Yup.string().required("Required"),
-      Intervention_rtsite_4week: Yup.string().required("Required"),
-      Intervention_ltsite_4week: Yup.string().required("Required"),
-      Intervention_rtsite_FU: Yup.string().required("Required"),
-      Intervention_ltsite_FU: Yup.string().required("Required"),
+      Dexa_RT_Tscore: Yup.string().required("Required"),
+      Dexa_RT_Zscore: Yup.string().required("Required"),
+      Dexa_LT_Tscore: Yup.string().required("Required"),
+      Dexa_LT_Zscore: Yup.string().required("Required"),
+      Vertebra_RT_Tscore: Yup.string().required("Required"),
+      Vertebra_RT_Zscore: Yup.string().required("Required"),
+      Vertebra_LT_Tscore: Yup.string().required("Required"),
+      Vertebra_LT_Zscore: Yup.string().required("Required"),
+      Hip_RT_Tscore: Yup.string().required("Required"),
+      Hip_RT_Zscore: Yup.string().required("Required"),
+      Hip_LT_Tscore: Yup.string().required("Required"),
+      Hip_LT_Zscore: Yup.string().required("Required"),
     }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -43,217 +43,227 @@ export default function Dpage1() {
   return (
     <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem" }}>
       <Typography variant="h4" sx={{ mb: "1rem" }}>
-        TCPO2
+        Probe to bone test:
       </Typography>
       <Typography
-        sx={{ color: "#0AD0B2", fontSize: "1rem", mb: "0.3rem", mt: "-1.5rem" }}
+        sx={{ color: "#0AD0B2", fontSize: "1rem", mb: "1rem", mt: "1rem" }}
       >
-        Baseline Name
+        Dexa :
       </Typography>
       <Grid container spacing={3} columnSpacing={1.5}>
         <Grid item md={6} xl={6}>
           <Textbox
-            label="RT(site)"
+            label="RT-T score"
             type="text"
-            name="Baseline_rtsite"
-            placeholder="Enter RT(site) value"
+            name="Dexa_RT_Tscore"
+            placeholder="Enter RT-T score value"
             variant="outlined"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             fullWidth
           />
-          {formik.touched.Baseline_rtsite && formik.errors.Baseline_rtsite ? (
-            <p className="error">*{formik.errors.Baseline_rtsite}*</p>
+          {formik.touched.Dexa_RT_Tscore && formik.errors.Dexa_RT_Tscore ? (
+            <p className="error">*{formik.errors.Dexa_RT_Tscore}*</p>
           ) : null}
         </Grid>
         <Grid item md={6} xl={6}>
           <Textbox
-            label="LT(site)"
+            label="RT-Z score"
             type="text"
-            name="Baseline_ltsite"
-            placeholder="Enter LT(site) value"
+            name="Dexa_RT_Zscore"
+            placeholder="Enter RT-Z score value"
             variant="outlined"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             fullWidth
           />
-          {formik.touched.Baseline_ltsite && formik.errors.Baseline_ltsite ? (
-            <p className="error">*{formik.errors.Baseline_ltsite}*</p>
+          {formik.touched.Dexa_RT_Zscore && formik.errors.Dexa_RT_Zscore ? (
+            <p className="error">*{formik.errors.Dexa_RT_Zscore}*</p>
           ) : null}
         </Grid>
+
+        <Grid item md={6} xl={6}>
+          <Textbox
+            label="LT-T score"
+            type="text"
+            name="Dexa_LT_Tscore"
+            placeholder="Enter LT-T score value"
+            variant="outlined"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            fullWidth
+          />
+          {formik.touched.Dexa_LT_Tscore && formik.errors.Dexa_LT_Tscore ? (
+            <p className="error">*{formik.errors.Dexa_LT_Tscore}*</p>
+          ) : null}
+        </Grid>
+        <Grid item md={6} xl={6}>
+          <Textbox
+            label="LT-Z score"
+            type="text"
+            name="Dexa_LT_Zscore"
+            placeholder="Enter LT-Z score value"
+            variant="outlined"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            fullWidth
+          />
+          {formik.touched.Dexa_LT_Zscore && formik.errors.Dexa_LT_Zscore ? (
+            <p className="error">*{formik.errors.Dexa_LT_Zscore}*</p>
+          ) : null}
+        </Grid>
+
         <Grid item md={12} xl={12}>
           <Typography
             sx={{
               color: "#0AD0B2",
               fontSize: "1rem",
-              mb: "-2rem",
+              mb: "-0.5rem",
               mt: "-0.5rem",
             }}
           >
-            Intervention Name
+            Vertebra:
           </Typography>
         </Grid>
+
         <Grid item md={6} xl={6}>
           <Textbox
-            label="RT(site) 1week value"
+            label="RT-T score"
             type="text"
-            name="Intervention_rtsite_1week"
-            placeholder="Enter RT(site) 1week value"
+            name="Vertebra_RT_Tscore"
+            placeholder="Enter RT-T score value"
             variant="outlined"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             fullWidth
           />
-          {formik.touched.Intervention_rtsite_1week &&
-          formik.errors.Intervention_rtsite_1week ? (
-            <p className="error">*{formik.errors.Intervention_rtsite_1week}*</p>
+          {formik.touched.Vertebra_RT_Tscore &&
+          formik.errors.Vertebra_RT_Tscore ? (
+            <p className="error">*{formik.errors.Vertebra_RT_Tscore}*</p>
           ) : null}
         </Grid>
         <Grid item md={6} xl={6}>
           <Textbox
-            label="LT(site) 1 week value"
+            label="RT-Z score"
             type="text"
-            name="Intervention_ltsite_1week"
-            placeholder="Enter LT(site) 1week value"
+            name="Vertebra_RT_Zscore"
+            placeholder="Enter RT-Z score value"
             variant="outlined"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             fullWidth
           />
-          {formik.touched.Intervention_ltsite_1week &&
-          formik.errors.Intervention_ltsite_1week ? (
-            <p className="error">*{formik.errors.Intervention_ltsite_1week}*</p>
-          ) : null}
-        </Grid>
-        <Grid item md={6} xl={6}>
-          <Textbox
-            label="RT(site) 2week value"
-            type="text"
-            name="Intervention_rtsite_2week"
-            placeholder="Enter RT(site) 2week value"
-            variant="outlined"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            fullWidth
-          />
-          {formik.touched.Intervention_rtsite_2week &&
-          formik.errors.Intervention_rtsite_2week ? (
-            <p className="error">*{formik.errors.Intervention_rtsite_2week}*</p>
-          ) : null}
-        </Grid>
-        <Grid item md={6} xl={6}>
-          <Textbox
-            label="LT(site) 2 week value"
-            type="text"
-            name="Intervention_ltsite_2week"
-            placeholder="Enter LT(site) 2week value"
-            variant="outlined"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            fullWidth
-          />
-          {formik.touched.Intervention_ltsite_2week &&
-          formik.errors.Intervention_ltsite_2week ? (
-            <p className="error">*{formik.errors.Intervention_ltsite_2week}*</p>
+          {formik.touched.Vertebra_RT_Zscore &&
+          formik.errors.Vertebra_RT_Zscore ? (
+            <p className="error">*{formik.errors.Vertebra_RT_Zscore}*</p>
           ) : null}
         </Grid>
 
         <Grid item md={6} xl={6}>
           <Textbox
-            label="RT(site) 3week value"
+            label="LT-T score"
             type="text"
-            name="Intervention_rtsite_3week"
-            placeholder="Enter RT(site) 3week value"
+            name="Vertebra_LT_Tscore"
+            placeholder="Enter LT-T score value"
             variant="outlined"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             fullWidth
           />
-          {formik.touched.Intervention_rtsite_3week &&
-          formik.errors.Intervention_rtsite_3week ? (
-            <p className="error">*{formik.errors.Intervention_rtsite_3week}*</p>
+          {formik.touched.Vertebra_LT_Tscore &&
+          formik.errors.Vertebra_LT_Tscore ? (
+            <p className="error">*{formik.errors.Vertebra_LT_Tscore}*</p>
           ) : null}
         </Grid>
         <Grid item md={6} xl={6}>
           <Textbox
-            label="LT(site) 3 week value"
+            label="LT-Z score"
             type="text"
-            name="Intervention_ltsite_3week"
-            placeholder="Enter LT(site) 3week value"
+            name="Vertebra_LT_Zscore"
+            placeholder="Enter LT-Z score value"
             variant="outlined"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             fullWidth
           />
-          {formik.touched.Intervention_ltsite_3week &&
-          formik.errors.Intervention_ltsite_3week ? (
-            <p className="error">*{formik.errors.Intervention_ltsite_3week}*</p>
+          {formik.touched.Vertebra_LT_Zscore &&
+          formik.errors.Vertebra_LT_Zscore ? (
+            <p className="error">*{formik.errors.Vertebra_LT_Zscore}*</p>
+          ) : null}
+        </Grid>
+
+        <Grid item md={12} xl={12}>
+          <Typography
+            sx={{
+              color: "#0AD0B2",
+              fontSize: "1rem",
+              mb: "-0.5rem",
+              mt: "-0.5rem",
+            }}
+          >
+            Hip:
+          </Typography>
+        </Grid>
+
+        <Grid item md={6} xl={6}>
+          <Textbox
+            label="RT-T score"
+            type="text"
+            name="Hip_RT_Tscore"
+            placeholder="Enter RT-T score value"
+            variant="outlined"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            fullWidth
+          />
+          {formik.touched.Hip_RT_Tscore && formik.errors.Hip_RT_Tscore ? (
+            <p className="error">*{formik.errors.Hip_RT_Tscore}*</p>
+          ) : null}
+        </Grid>
+        <Grid item md={6} xl={6}>
+          <Textbox
+            label="RT-Z score"
+            type="text"
+            name="Hip_RT_Zscore"
+            placeholder="Enter RT-Z score value"
+            variant="outlined"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            fullWidth
+          />
+          {formik.touched.Hip_RT_Zscore && formik.errors.Hip_RT_Zscore ? (
+            <p className="error">*{formik.errors.Hip_RT_Zscore}*</p>
           ) : null}
         </Grid>
 
         <Grid item md={6} xl={6}>
           <Textbox
-            label="RT(site) 4week value"
+            label="LT-T score"
             type="text"
-            name="Intervention_rtsite_4week"
-            placeholder="Enter RT(site) 4week value"
+            name="Hip_LT_Tscore"
+            placeholder="Enter LT-T score value"
             variant="outlined"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             fullWidth
           />
-          {formik.touched.Intervention_rtsite_4week &&
-          formik.errors.Intervention_rtsite_4week ? (
-            <p className="error">*{formik.errors.Intervention_rtsite_4week}*</p>
+          {formik.touched.Hip_LT_Tscore && formik.errors.Hip_LT_Tscore ? (
+            <p className="error">*{formik.errors.Hip_LT_Tscore}*</p>
           ) : null}
         </Grid>
         <Grid item md={6} xl={6}>
           <Textbox
-            label="LT(site) 4 week value"
+            label="LT-Z score"
             type="text"
-            name="Intervention_ltsite_4week"
-            placeholder="Enter LT(site) 4week value"
+            name="Hip_LT_Zscore"
+            placeholder="Enter LT-Z score value"
             variant="outlined"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             fullWidth
           />
-          {formik.touched.Intervention_ltsite_4week &&
-          formik.errors.Intervention_ltsite_4week ? (
-            <p className="error">*{formik.errors.Intervention_ltsite_4week}*</p>
-          ) : null}
-        </Grid>
-
-        <Grid item md={6} xl={6}>
-          <Textbox
-            label="RT(site) F/U value"
-            type="text"
-            name="Intervention_rtsite_FU"
-            placeholder="Enter RT(site) F/U value"
-            variant="outlined"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            fullWidth
-          />
-          {formik.touched.Intervention_rtsite_FU &&
-          formik.errors.Intervention_rtsite_FU ? (
-            <p className="error">*{formik.errors.Intervention_rtsite_FU}*</p>
-          ) : null}
-        </Grid>
-        <Grid item md={6} xl={6}>
-          <Textbox
-            label="LT(site) F/U value"
-            type="text"
-            name="Intervention_ltsite_FU"
-            placeholder="Enter LT(site) F/U value"
-            variant="outlined"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            fullWidth
-          />
-          {formik.touched.Intervention_ltsite_FU &&
-          formik.errors.Intervention_ltsite_FU ? (
-            <p className="error">*{formik.errors.Intervention_ltsite_FU}*</p>
+          {formik.touched.Hip_LT_Zscore && formik.errors.Hip_LT_Zscore ? (
+            <p className="error">*{formik.errors.Hip_LT_Zscore}*</p>
           ) : null}
         </Grid>
 

@@ -46,7 +46,7 @@ export default function Dpage1() {
         TCPO2
       </Typography>
       <Typography
-        sx={{ color: "#0AD0B2", fontSize: "1rem", mb: "0.3rem", mt: "-1.5rem" }}
+        sx={{ color: "#0AD0B2", fontSize: "1rem", mb: "1rem", mt: "1rem" }}
       >
         Baseline Name
       </Typography>
@@ -86,8 +86,7 @@ export default function Dpage1() {
             sx={{
               color: "#0AD0B2",
               fontSize: "1rem",
-              mb: "-2rem",
-              mt: "-0.5rem",
+              
             }}
           >
             Intervention Name

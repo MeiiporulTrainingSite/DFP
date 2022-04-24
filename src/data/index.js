@@ -22,7 +22,7 @@ export const menu1 = [
   { title: "1.4 DNS Score", path: "/DNS Score" },
   { title: "1.15 TCPO2 ", path: "/TCPO2" },
   { title: "1.16 Probe to bone test", path: "/Probe to bone test" },
-  { title: "1.1 Personal Information", path: "/" },
+  { title: "1.17 Radiography Findings", path: "/Radiography Findings" },
   { title: "1.2 Diabetic Complications", path: "/DiabeticComplications" },
   { title: "1.3 Neuropathy", path: "/Neuropathy" },
   { title: "1.4 DNS Score", path: "/DNS Score" },
