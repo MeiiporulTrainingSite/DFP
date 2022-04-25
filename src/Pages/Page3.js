@@ -158,7 +158,7 @@ export default function Page3() {
   ];
   return (
 
-    <form onSubmit={formik.handleSubmit} >
+    <form onSubmit={formik.handleSubmit} style={{padding:"1.5rem"}}>
 
       <Typography variant='h4' sx={{ mb: '1rem' }}>DNS Score</Typography>
       <Grid container spacing={2} >

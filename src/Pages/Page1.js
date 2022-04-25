@@ -263,7 +263,7 @@ export default function Page1() {
             sx={{ backgroundColor: "#0AD0B2", color: "#fff", ":hover": {
               border:"1px solid #0AD0B2",
               color: "#0AD0B2"
-            } }}
+            },marginRight:"1rem" }}
           >
            
            Save

@@ -7,6 +7,7 @@ import Textbox from "../component/Textbox";
 import Grid from "@mui/material/Grid";
 import CheckBox from "../component/Checkbox";
 import { useDispatch, useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 import "../App.css";
 
 export default function Page2() {
@@ -238,6 +239,7 @@ export default function Page2() {
           ) : null}
         </Grid>
         <Grid item md={12} lg={12} align="right">
+        <Link to ="/DNS Score">
           <Button
           // onClick={onClick}
             type="submit"
@@ -252,6 +254,7 @@ export default function Page2() {
           >
             Continue
           </Button>
+          </Link>
         </Grid>
       </Grid>
     </form>

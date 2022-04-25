@@ -17,6 +17,15 @@ const theme = createTheme({
     main: '#0AD0B2',
    }
  },
+//  breakpoints: {
+//   values: {
+//     xs: 0,
+//     sm: 640,
+//     md: 1024,
+//     lg: 1300,
+//     xl:1500
+//   },
+// },
 });
 export default function Section() {
   const [value, setValue] = React.useState(0);
