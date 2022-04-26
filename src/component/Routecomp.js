@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import { Route, Switch } from "react-router-dom";
 import Page1 from "../Pages/Page1";
-import Page2 from "../Pages/Page2";
-import Page3 from "../Pages/Page3";
-import Page4 from "../Pages/Page4";
+import Page2 from "../Pages/Page2/Page2";
+import Page3 from "../Pages/Page3/Page3";
+import Page4 from "../Pages/Page4/Page4";
 import Dpage1 from "../Pages/dpage1";
 import Dpage2 from "../Pages/dpage2";
 import Dpage3 from "../Pages/dpage3";

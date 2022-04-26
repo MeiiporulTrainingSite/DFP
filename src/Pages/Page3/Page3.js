@@ -1,12 +1,12 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button, Typography } from "@mui/material";
-import RadioCom from "../component/Radio"
-import SelectCom from "../component/Select";
-import Textbox from "../component/Textbox";
+import RadioCom from "../../component/Radio"
+import SelectCom from "../../component/Select";
+import Textbox from "../../component/Textbox";
 import Grid from "@mui/material/Grid";
-import CheckBox from "../component/Checkbox";
-import "../App.css";
+import "../../App.css";
+import CheckNone from "./CheckNone";
 
 export default function Page3() {
   const formik = useFormik({
@@ -20,8 +20,8 @@ export default function Page3() {
       FootatRisk: Yup.string().required("Required"),
       PVD: Yup.string().required("Required"),
       Claudication: Yup.array()
-        .required("required")
-        .min(1, "atleast one")
+        .required("Required")
+        .min(1, "Please check atleast one")
     }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -127,39 +127,9 @@ export default function Page3() {
       name: "PVD"
     }
   ];
-  const claudifiaction = [
-    {
-      change: "",
-      value: "Rest pain",
-      name: "Claudication",
-      label: "Rest pain"
-    },
-    {
-      value: "Change in color",
-      name: "Claudication",
-      label: "Change in color"
-    },
-    {
-      value: "Gangrene",
-      name: "Claudication",
-      label: "Gangrene"
-    },
-    {
-      value: "Gangrene",
-      name: "Claudication",
-      label: "Gangrene"
-    },
-    {
-      value: "None",
-      name: "Claudication",
-      label: "None"
-    },
-
-  ];
+  
   return (
-
     <form onSubmit={formik.handleSubmit} style={{padding:"1.5rem"}}>
-
       <Typography variant='h4' sx={{ mb: '1rem' }}>DNS Score</Typography>
       <Grid container spacing={2} >
         <Grid item md={6} xl={6}>
@@ -223,7 +193,7 @@ or feet
           ) : null}
         </Grid>
         <Grid item md={12} xl={12}>
-          <CheckBox checkContent={claudifiaction} onChange={formik.handleChange} FormLabel="Claudification" />
+          <CheckNone  name="Claudication" onChange={formik.handleChange} FormLabel="Claudification" />
           {formik.touched.Claudication && formik.errors.Claudication ? (
             <p className="error">*{formik.errors.Claudication}*</p>
           ) : null}
