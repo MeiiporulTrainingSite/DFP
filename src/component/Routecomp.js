@@ -7,6 +7,7 @@ import Page4 from "../Pages/Page4";
 import Dpage1 from "../Pages/dpage1";
 import Dpage2 from "../Pages/dpage2";
 import Dpage3 from "../Pages/dpage3";
+import Sinbad from "../Pages/Sinbad/Sinbad";
 export default function ListRouter() {
   return (
     <Box>
@@ -22,6 +23,9 @@ export default function ListRouter() {
         </Route>
         <Route path="/RutherfordGrade">
           <Page4 />
+        </Route>
+        <Route path="/Sinbad">
+          <Sinbad />
         </Route>
         <Route path="/TCPO2">
           <Dpage1 />
