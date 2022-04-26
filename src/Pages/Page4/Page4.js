@@ -1,12 +1,14 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button, Typography } from "@mui/material";
-import SelectCom from "../component/Select";
-import Textbox from "../component/Textbox";
+import SelectCom from "../../component/Select";
+import Textbox from "../../component/Textbox";
 import Grid from "@mui/material/Grid";
-import CheckBox from "../component/Checkbox";
-
-import "../App.css";
+import CheckBox from "../../component/Checkbox";
+import CheckNone1 from "./CheckNone1";
+import CheckNone2 from "./CheckNone2";
+import CheckNone3 from "./CheckNone3";
+import "../../App.css";
 const rutherGrade = [
     {
         value: "Stage 0 Asymptomatic",
@@ -36,40 +38,7 @@ const rutherGrade = [
         value: "Stage 6 Severe ischemic ulcers or frank gangrene ",
         item: "Stage 6 Severe ischemic ulcers or frank gangrene ",
     }
-];
-const cad = [
-    {
-        value: "Angina MI",
-        name: "cad",
-        label: "Angina MI"
-    },
-    {
-        value: "CMP",
-        name: "cad",
-        label: "CMP"
-    },
-    {
-        value: "Thrombolysis",
-        name: "cad",
-        label: "Thrombolysis"
-    },
-    {
-        value: "Angioplasty",
-        name: "cad",
-        label: "Angioplasty"
-    },
-    {
-        value: "CABG",
-        name: "cad",
-        label: "CABG"
-    },
-
-    {
-        value: "None",
-        name: "cad",
-        label: "None"
-    },
-];
+];  
 const stroke = [
     {
         value: "Lt/Rt",
@@ -127,40 +96,16 @@ const htn = [
     },
 
 ];
-const smoker = [
-    {
-        value: "smoker",
-        label: "Smoker",
-        name: "smoker",
-    },
-    {
-        value: "alcoholic",
-        label: "Alcoholic",
-        name: "alcoholic",
-    },
-    {
-        value: "tobaccoChewing",
-        label: "Tobacco Chewing",
-        name: "tobaccoChewing",
-    },
-    { 
-        value: "None",
-        name: "smoker",
-        label: "None"
-    }
-   
-];
+
 
 export default function Page4() {
     const formik = useFormik({
         initialValues: {
             rutherfordGrade: '',
-            cad: [],
+            cad:[],
             stroke: [],
             htn: [],
-            smoker: "",
-            alcoholic: '',
-            tobaccoChewing: "",
+            Personalhistory:[],            
             historyPresentUlcer:''
 
         },
@@ -174,9 +119,10 @@ export default function Page4() {
                 .min(1, " Please check atleast one"),
             htn: Yup.array()
                 .required("Required")
-                .min(1, " Please check atleast one"),
-            smoker: Yup.string().required("Required"),
-            
+                .min(1, " Please check atleast one"),            
+            Personalhistory: Yup.array()
+                 .required("Required")
+                 .min(1, "Please check atleast one"),            
             historyPresentUlcer: Yup.string().required("Required"),
 
         }),
@@ -208,7 +154,7 @@ export default function Page4() {
                 </Grid>
 
                 <Grid item md={12} lg={12}>
-                    <CheckBox checkContent={cad} onChange={formik.handleChange} FormLabel="CAD" />
+                    <CheckNone1 name="cad" onChange={formik.handleChange} FormLabel="CAD" />
                     {formik.touched.cad && formik.errors.cad ? (
                         <p className="error">*{formik.errors.cad}*</p>
                     ) : null}
@@ -220,9 +166,8 @@ export default function Page4() {
                         <p className="error">*{formik.errors.stroke}*</p>
                     ) : null}
                 </Grid>
-
                 <Grid item md={12} lg={12}>
-                    <CheckBox checkContent={htn} onChange={formik.handleChange} FormLabel="HTN" />
+                    <CheckNone2 name="htn" onChange={formik.handleChange} FormLabel="HTN" />
                     {formik.touched.htn && formik.errors.htn ? (
                         <p className="error">*{formik.errors.htn}*</p>
                     ) : null}
@@ -230,14 +175,14 @@ export default function Page4() {
                 <Grid item md={12} lg={12}>
                     <Typography variant='h4' >
                        Personal History
-                    </Typography></Grid>
+                    </Typography></Grid>              
 
                 <Grid item md={12} lg={12}>
-                <CheckBox checkContent={smoker} onChange={formik.handleChange}  />
-                    {formik.touched.smoker && formik.errors.smoker ? (
-                        <p className="error">*{formik.errors.smoker}*</p>
-                    ) : null}
-                </Grid>
+          <CheckNone3  name="Personalhistory" onChange={formik.handleChange}  />
+          {formik.touched.Personalhistory && formik.errors.Personalhistory ? (
+            <p className="error">*{formik.errors.Personalhistory}*</p>
+          ) : null}
+        </Grid>
                 
 
                 <Grid item md={6} xl={6}>

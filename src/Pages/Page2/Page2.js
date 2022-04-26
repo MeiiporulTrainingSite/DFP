@@ -1,14 +1,15 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button, Typography } from "@mui/material";
-import RadioCom from "../component/Radio";
-import SelectCom from "../component/Select";
-import Textbox from "../component/Textbox";
+import RadioCom from "../../component/Radio";
+import Textbox from "../../component/Textbox";
 import Grid from "@mui/material/Grid";
-import CheckBox from "../component/Checkbox";
+import Checkbox from "../../component/Checkbox";
+import CheckNone from "../../component/CheckNone";
+ import CheckNone1 from "./CheckNone1";
 import { useDispatch, useSelector } from "react-redux";
 import {Link} from "react-router-dom";
-import "../App.css";
+ import "../../App.css";
 
 export default function Page2() {
   const dispatch = useDispatch();
@@ -26,80 +27,26 @@ export default function Page2() {
       Sensory: "",
     },
     validationSchema: Yup.object({
-      Retinopathy: Yup.array().required("required").min(1, "atleast one"),
-      Lasercoagulation: Yup.array().required("required").min(1, "atleast one"),
-      Nephropathy: Yup.array().required("required").min(1, "atleast one"),
+      Retinopathy: Yup.array().required("Required").min(1, "Please check atleast one"),
+      Lasercoagulation: Yup.array().required("Required").min(1, "Please check atleast one"),
+      Nephropathy: Yup.array().required("Required").min(1, "Please check atleast one"),
       eGFR: Yup.string().required("Required"),
-      Motor: Yup.array().required("required").min(1, "atleast one"),
-      Autonomic: Yup.array().required("required").min(1, "atleast one"),
+      Motor: Yup.array().required("Required").min(1, "Please check atleast one"),
+      Autonomic: Yup.array().required("Required").min(1, "Please check atleast one"),
       Sensory: Yup.string().required("Required"),
     }),
+
     onSubmit: (values) => {
-      dispatch({type:"storeData",data:values})
-    //  alert(JSON.stringify(selector, null, 2));
-    },
+      alert(JSON.stringify(values, null, 2));
+    }
   });
-
+  //   onSubmit: (values) => {
+  //     dispatch({type:"storeData",data:values})
+  //   alert(JSON.stringify(selector, null, 2));
+  //   },
+  // });
   console.log(selector)
-  const retinopathy = [
-    {
-      value: "Left",
-      name: "Retinopathy",
-      label: "Left",
-    },
-    {
-      value: "Right",
-      name: "Retinopathy",
-      label: "Right",
-    },
-    {
-      value: "None",
-      name: "Retinopathy",
-      label: "None",
-    },
-  ];
-
-  const lasercoagulation = [
-    {
-      value: "Left",
-      name: "Lasercoagulation",
-      label: "Left",
-    },
-    {
-      value: "Right",
-      name: "Lasercoagulation",
-      label: "Right",
-    },
-    {
-      value: "None",
-      name: "Lasercoagulation",
-      label: "None",
-    },
-  ];
-  const nephropathy = [
-    {
-      value: "Creatinine",
-      name: "Nephropathy",
-      label: "Creatinine",
-    },
-    {
-      value: "Proteinuria",
-      name: "Nephropathy",
-      label: "Proteinuria",
-    },
-    {
-      value: "Micral",
-      name: "Nephropathy",
-      label: "Micral",
-    },
-    {
-      value: "None",
-      name: "Nephropathy",
-      label: "None",
-    },
-  ];
-
-  const motor = [
+    const motor = [
     {
       value: "Amyotrophy",
       name: "Motor",
@@ -163,8 +110,8 @@ export default function Page2() {
       </Typography>
       <Grid container spacing={2}>
         <Grid item md={6} lg={6}>
-          <CheckBox
-            checkContent={lasercoagulation}
+          <CheckNone
+            name="Lasercoagulation"
             onChange={formik.handleChange}
             FormLabel="Diabetic retinopathy"
           />
@@ -173,8 +120,8 @@ export default function Page2() {
           ) : null}
         </Grid>
         <Grid item md={6} lg={6}>
-          <CheckBox
-            checkContent={retinopathy}
+          <CheckNone
+            name="Retinopathy"
             onChange={formik.handleChange}
             FormLabel="Laser coagulation"
           />
@@ -183,8 +130,8 @@ export default function Page2() {
           ) : null}
         </Grid>
         <Grid item md={12} lg={12}>
-          <CheckBox
-            checkContent={nephropathy}
+          <CheckNone1
+            name="Nephropathy"
             onChange={formik.handleChange}
             FormLabel="Nephropathy"
           />
@@ -209,7 +156,7 @@ export default function Page2() {
           ) : null}
         </Grid>
         <Grid item md={12} lg={12}>
-          <CheckBox
+          <Checkbox
             checkContent={motor}
             onChange={formik.handleChange}
             FormLabel="Motor"
@@ -219,7 +166,7 @@ export default function Page2() {
           ) : null}
         </Grid>
         <Grid item md={12} lg={12}>
-          <CheckBox
+          <Checkbox
             checkContent={autonomic}
             onChange={formik.handleChange}
             FormLabel="Autonomic Neuropathy"
@@ -239,7 +186,7 @@ export default function Page2() {
           ) : null}
         </Grid>
         <Grid item md={12} lg={12} align="right">
-        <Link to ="/DNS Score">
+        {/* <Link to ="/DNS Score"> */}
           <Button
           // onClick={onClick}
             type="submit"
@@ -254,7 +201,7 @@ export default function Page2() {
           >
             Continue
           </Button>
-          </Link>
+          {/* </Link> */}
         </Grid>
       </Grid>
     </form>
