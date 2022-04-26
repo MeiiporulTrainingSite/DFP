@@ -4,9 +4,12 @@ import Page1 from "../Pages/Page1";
 import Page2 from "../Pages/Page2/Page2";
 import Page3 from "../Pages/Page3/Page3";
 import Page4 from "../Pages/Page4/Page4";
+import Observations from "../Pages/Page12/Observations";
+import Pulsations from "../Pages/Page13/Pulsations";
 import Dpage1 from "../Pages/dpage1";
 import Dpage2 from "../Pages/dpage2";
 import Dpage3 from "../Pages/dpage3";
+
 export default function ListRouter() {
   return (
     <Box>
@@ -32,6 +35,12 @@ export default function ListRouter() {
         <Route path="/Radiography Findings">
           <Dpage3 />
         </Route>
+        <Route path="/Observations">
+          <Observations/>
+        </Route>
+        <Route path="/Pulsations">
+        <Pulsations/>
+        </Route>        
       </Switch>
     </Box>
   );

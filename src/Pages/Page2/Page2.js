@@ -111,7 +111,7 @@ export default function Page2() {
       <Grid container spacing={2}>
         <Grid item md={6} lg={6}>
           <CheckNone
-            name="Lasercoagulation"
+            name="Retinopathy"
             onChange={formik.handleChange}
             FormLabel="Diabetic retinopathy"
           />
@@ -121,7 +121,7 @@ export default function Page2() {
         </Grid>
         <Grid item md={6} lg={6}>
           <CheckNone
-            name="Retinopathy"
+            name="Lasercoagulation"
             onChange={formik.handleChange}
             FormLabel="Laser coagulation"
           />
