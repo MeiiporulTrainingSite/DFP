@@ -28,7 +28,7 @@ export default function ListRouter() {
         <Route path="/RutherfordGrade">
           <Page4 />
         </Route>
-        <Route path = '/Estimated Time of foot lesion'>
+        <Route path = "/EstimatedTimeoffootlesion">
           <EstimatedTimeofFootLesion/>
         </Route>
         <Route path="/Sinbad">

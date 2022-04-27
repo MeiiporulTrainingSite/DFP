@@ -4,7 +4,7 @@ import { Button, Typography } from "@mui/material";
 
 import Grid from "@mui/material/Grid";
 
-import EstimatedTime from "./Estimatedprops";
+import EstimatedTime from './Estimatedprops'
 
 export default function EstimatedTimeofFootLesion() {
   // const dispatch=useDispatch();
@@ -16,11 +16,11 @@ export default function EstimatedTimeofFootLesion() {
       Months: "",
       Days: ""
     },
-    validationSchema: Yup.object({
-      Years: Yup.string().required("Required"),
-      Months: Yup.string().required("Required"),
-      Days: Yup.string().required("Required")
-    }),
+    // validationSchema: Yup.object({
+    //   Years: Yup.string().required("Required"),
+    //   Months: Yup.string().required("Required"),
+    //   Days: Yup.string().required("Required")
+    // }),
     onSubmit: (values) => {
       
       alert(JSON.stringify(values, null, 2));
@@ -41,10 +41,11 @@ export default function EstimatedTimeofFootLesion() {
             placeholder="Years"
           />
 
-          {formik.touched.Years && formik.errors.Years  ? (
-            <p className="error">*{formik.errors.Years }*</p>
-          ) : null}
+         
         </Grid>
+        {/* {formik.touched.Years && formik.errors.Years  ? (
+            <p className="error">*{formik.errors.Years }*</p>
+          ) : null} */}
         <Grid item md={4} xl={4}>
           <EstimatedTime
             name="Months"
@@ -53,9 +54,9 @@ export default function EstimatedTimeofFootLesion() {
             placeholder="Months"
           />
         </Grid>
-        {formik.touched.Months && formik.errors.Months  ? (
+        {/* {formik.touched.Months && formik.errors.Months  ? (
             <p className="error">*{formik.errors.Months }*</p>
-          ) : null}
+          ) : null} */}
 
         <Grid item md={4} xl={4}>
           <EstimatedTime
@@ -65,9 +66,9 @@ export default function EstimatedTimeofFootLesion() {
             placeholder="Days"
           />
         </Grid>
-        {formik.touched.Days && formik.errors.Days  ? (
+        {/* {formik.touched.Days && formik.errors.Days  ? (
             <p className="error">*{formik.errors.Days }*</p>
-          ) : null}
+          ) : null} */}
       
       <Grid item md={12} lg={12} xl={12} align="right">
         <Button
