@@ -10,6 +10,8 @@ import Dpage1 from "../Pages/dpage1";
 import Dpage2 from "../Pages/dpage2";
 import Dpage3 from "../Pages/dpage3";
 import Sinbad from "../Pages/Sinbad/Sinbad";
+import EstimatedTimeofFootLesion from "../Pages/Currentlesion/EstimatedTime";
+
 export default function ListRouter() {
   return (
     <Box>
@@ -25,6 +27,9 @@ export default function ListRouter() {
         </Route>
         <Route path="/RutherfordGrade">
           <Page4 />
+        </Route>
+        <Route path = '/Estimated Time of foot lesion'>
+          <EstimatedTimeofFootLesion/>
         </Route>
         <Route path="/Sinbad">
           <Sinbad />
