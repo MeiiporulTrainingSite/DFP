@@ -144,7 +144,7 @@ export default function Dpage3() {
         </Typography>
         <Grid container spacing={1} columnSpacing={2}>
           <Grid item md={4} xl={4}>
-            <Textbox
+            <Textbox1
               label="Weight"
               type="text"
               name="Weight"
@@ -153,6 +153,7 @@ export default function Dpage3() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               fullWidth
+              unit="kg"
               // InputProps={endAdornment}
             />
             {formik.touched.Weight && formik.errors.Weight ? (
@@ -160,7 +161,7 @@ export default function Dpage3() {
             ) : null}
           </Grid>
           <Grid item md={4} xl={4}>
-            <Textbox
+            <Textbox1
               label="Height"
               type="text"
               name="Height"
@@ -169,6 +170,7 @@ export default function Dpage3() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               fullWidth
+              unit="cm"
               // InputProps={endAdornment}
             />
             {formik.touched.Height && formik.errors.Height ? (
@@ -176,7 +178,7 @@ export default function Dpage3() {
             ) : null}
           </Grid>
           <Grid item md={4} xl={4}>
-            <Textbox
+            <Textbox1
               label="BMI"
               type="text"
               name="BMI"
@@ -185,6 +187,7 @@ export default function Dpage3() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               fullWidth
+              unit="kg/cm2"
               // InputProps={endAdornment}
             />
             {formik.touched.BMI && formik.errors.BMI ? (

@@ -10,9 +10,11 @@ export default function Textbox1(props) {
       variant="outlined"
       onChange={props.onChange}
       fullWidth
-      sx={{ m: 1, width: "25ch" }}
+      sx={{ width: "40ch" }}
       InputProps={{
-        endAdornment: <InputAdornment position="end">kg</InputAdornment>,
+        endAdornment: (
+          <InputAdornment position="end">{props.unit}</InputAdornment>
+        ),
       }}
     />
   );
