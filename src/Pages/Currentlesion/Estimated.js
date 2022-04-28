@@ -4,8 +4,8 @@ import { Button, Typography } from "@mui/material";
 
 import Grid from "@mui/material/Grid";
 
-import EstimatedTime from "./Estimatedprops";
-export default function Estimated() {
+import Estimatedprops from "./Estimatedprops";
+export default function Estimatedtime() {
   const formik = useFormik({
     initialValues: {
       Years: "",
@@ -22,51 +22,38 @@ export default function Estimated() {
     },
   });
   return (
-    <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem" }}>
-      <Typography variant="h4" sx={{ mb: "1rem" }}>
+    <Grid container spacing={1} columnSpacing={1.5}>
+      <Grid item md={12} xl={12}>
+      <Typography variant="h4" >
         Estimated Time of Foot Lesion
       </Typography>
-      <Grid container spacing={1} columnSpacing={1.5}>
-          <Grid item md={1} xl={1}>
-      <EstimatedTime
+      </Grid>
+          <Grid item md={1.5} xl={1.5}>
+      <Estimatedprops
             name="Years"
             onChange={formik.handleChange}
             label="Years"
             placeholder="Years"
           />
           </Grid>
-          <Grid item md={1} xl={1}>
-           <EstimatedTime
+          <Grid item md={1.5} xl={1.5}>
+           <Estimatedprops
             name="Months"
             onChange={formik.handleChange}
             label="Months"
             placeholder="Months"
           />
           </Grid>
-          <Grid item md={1} xl={1}>
-           <EstimatedTime
+          <Grid item md={1.5} xl={1.5}>
+           <Estimatedprops
             name="Days"
             onChange={formik.handleChange}
             label="Days"
             placeholder="Days"
           />
           </Grid>
-           <Grid item md={12} lg={12} xl={12} align="right">
-        <Button
-          type="submit"
-          sx={{
-            backgroundColor: "#0AD0B2",
-            color: "#fff",
-            ":hover": {
-              border: "1px solid #0AD0B2",
-              color: "#0AD0B2"
-            }
-          }}
-        >
-          Continue
-        </Button>
+ 
       </Grid>
-      </Grid>
-    </form>
+    
   );
 }

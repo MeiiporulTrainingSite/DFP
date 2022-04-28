@@ -11,7 +11,9 @@ import Dpage2 from "../Pages/dpage2";
 import Dpage3 from "../Pages/dpage3/dpage3";
 import Sinbad from "../Pages/Sinbad/Sinbad";
 import Estimatedtimeoffootlesion from "../Pages/Currentlesion/currentlesion.js";
-// import Estimated from "../Pages/Currentlesion/Estimated";
+import Nds from "../Pages/NDS/nds";
+import Pedis from "../Pages/PEDIS/pedis";
+
 
 export default function ListRouter() {
   return (
@@ -30,10 +32,14 @@ export default function ListRouter() {
           <Page4 />
         </Route>
         <Route path = "/Footlesion">
-        <Estimatedtimeoffootlesion/></Route>
-        {/* <Route path="/Lesion">
-          <Estimated />
-        </Route> */}
+        <Estimatedtimeoffootlesion/>
+        </Route> 
+        <Route path="/nds">
+          < Nds/>
+        </Route>
+        <Route path="/pedis">
+          <Pedis />
+        </Route>
         <Route path="/Sinbad">
           <Sinbad />
         </Route>
