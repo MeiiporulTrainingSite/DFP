@@ -10,6 +10,10 @@ import Dpage1 from "../Pages/dpage1";
 import Dpage2 from "../Pages/dpage2";
 import Dpage3 from "../Pages/dpage3/dpage3";
 import Sinbad from "../Pages/Sinbad/Sinbad";
+import Estimated from "../Pages/Currentlesion/Estimated";
+import Jpage1 from "../Pages/jpage1";
+import Antidiabetic from "../Pages/Antidiabetic";
+import Treatment from "../Pages/Treatment";
 import Estimatedtimeoffootlesion from "../Pages/Currentlesion/currentlesion.js";
 import Nds from "../Pages/NDS/nds";
 import Pedis from "../Pages/PEDIS/pedis";
@@ -57,6 +61,13 @@ export default function ListRouter() {
         </Route>
         <Route path="/Pulsations">
           <Pulsations />
+        </Route>
+        <Route path="/Bio-chemicalinvestigations">
+          <Jpage1 />
+        </Route>
+        <Route path="/Antidiabetic&treatment">
+          <Antidiabetic />
+          <Treatment />
         </Route>
       </Switch>
     </Box>
