@@ -9,9 +9,9 @@ export default function EstimatedTime(props) {
   const [value, setValue] = useState();
 
   return (
-    <Grid>
-      {/* <Menu> */}
-      <Grid item md={6} xl={6}>
+    // <Grid>
+    //   {/* <Menu> */}
+    //   <Grid item md={6} xl={6}>
         <TextField
           name={props.name}
           type="number"
@@ -29,8 +29,8 @@ export default function EstimatedTime(props) {
           }}
           variant="outlined"
         />
-      </Grid>
-    </Grid>
+    //   </Grid>
+    // </Grid>
   );
 }
 
