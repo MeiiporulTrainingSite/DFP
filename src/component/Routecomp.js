@@ -14,6 +14,8 @@ import Estimated from "../Pages/Currentlesion/Estimated";
 import Jpage1 from "../Pages/jpage1";
 import Antidiabetic from "../Pages/Antidiabetic";
 import Treatment from "../Pages/Treatment";
+import Estimatedtimeoffootlesion from "../Pages/Currentlesion/currentlesion.js";
+// import Estimated from "../Pages/Currentlesion/Estimated";
 
 export default function ListRouter() {
   return (
@@ -31,9 +33,11 @@ export default function ListRouter() {
         <Route path="/RutherfordGrade">
           <Page4 />
         </Route>
-        <Route path="/Lesion">
+        <Route path = "/Footlesion">
+        <Estimatedtimeoffootlesion/></Route>
+        {/* <Route path="/Lesion">
           <Estimated />
-        </Route>
+        </Route> */}
         <Route path="/Sinbad">
           <Sinbad />
         </Route>
