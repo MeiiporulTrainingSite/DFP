@@ -133,14 +133,14 @@ export default function Pedis() {
             </TableRow>
             <TableRow>
               <TableCell align="left" sx={{ fontSize: "16px" }}>
-                Size
+                Extent/Size (cm2)
               </TableCell>
               <TableCell align ='center'>
                 <Textbox
-                  label="Size"
+                  label="Extent/Size"
                   type="number"
                   name="Size"
-                  placeholder="Size"
+                  placeholder="Extent/Size"
                   variant="outlined"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -154,7 +154,7 @@ export default function Pedis() {
             </TableRow>
             <TableRow>
               <TableCell align="left" sx={{ fontSize: "16px" }}>
-                Depth tissue Loss
+                Depth tissue loss
               </TableCell>
               <TableCell align="center">
                 <SelectCom

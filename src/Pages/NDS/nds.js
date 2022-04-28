@@ -141,21 +141,35 @@ export default function Nds() {
                 </Table>
             </TableContainer>
 
-            <Grid item lg={12} sx={{ padding: "20px" }}>
-                <Button
-                    type="submit"
-                    sx={{
-                        backgroundColor: "#0AD0B2",
-                        color: "#fff",
-                        ":hover": {
-                            border: "1px solid #0AD0B2",
-                            color: "#0AD0B2"
-                        }
-                    }}
-                >
-                    Continue
-                </Button>
-            </Grid>
+            <Grid item md={12} lg={12} align="right">
+        <Button
+          type="submit"
+          sx={{
+            backgroundColor: "#0AD0B2",
+            color: "#fff",
+            ":hover": {
+              border: "1px solid #0AD0B2",
+              color: "#0AD0B2"
+            },
+            marginRight: "1rem"
+          }}
+        >
+          Save
+        </Button>
+
+        <Button
+          sx={{
+            backgroundColor: "#0AD0B2",
+            color: "#fff",
+            ":hover": {
+              border: "1px solid #0AD0B2",
+              color: "#0AD0B2"
+            }
+          }}
+        >
+          next
+        </Button>
+      </Grid>
         </form>
     );
 }
