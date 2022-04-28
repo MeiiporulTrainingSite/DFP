@@ -136,7 +136,7 @@ export default function Page4() {
     return (
 
         <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem" }} >
-            <Typography variant="h6" >
+            <Typography variant="h4" >
                 Rutherford Grade (PAD)
             </Typography>
             <Grid container spacing={2}>

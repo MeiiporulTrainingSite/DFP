@@ -8,9 +8,10 @@ import Observations from "../Pages/Page12/Observations";
 import Pulsations from "../Pages/Page13/Pulsations";
 import Dpage1 from "../Pages/dpage1";
 import Dpage2 from "../Pages/dpage2";
-import Dpage3 from "../Pages/dpage3";
+import Dpage3 from "../Pages/dpage3/dpage3";
 import Sinbad from "../Pages/Sinbad/Sinbad";
 import Estimatedtimeoffootlesion from "../Pages/Currentlesion/currentlesion.js";
+// import Estimated from "../Pages/Currentlesion/Estimated";
 
 export default function ListRouter() {
   return (
@@ -29,8 +30,10 @@ export default function ListRouter() {
           <Page4 />
         </Route>
         <Route path = "/Footlesion">
-        <Estimatedtimeoffootlesion/>
-        </Route>
+        <Estimatedtimeoffootlesion/></Route>
+        {/* <Route path="/Lesion">
+          <Estimated />
+        </Route> */}
         <Route path="/Sinbad">
           <Sinbad />
         </Route>
@@ -44,11 +47,11 @@ export default function ListRouter() {
           <Dpage3 />
         </Route>
         <Route path="/Observations">
-          <Observations/>
+          <Observations />
         </Route>
         <Route path="/Pulsations">
-        <Pulsations/>
-        </Route>        
+          <Pulsations />
+        </Route>
       </Switch>
     </Box>
   );
