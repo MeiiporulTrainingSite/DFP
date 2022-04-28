@@ -15,6 +15,7 @@ import Jpage1 from "../Pages/jpage1";
 import Antidiabetic from "../Pages/Antidiabetic";
 import Treatment from "../Pages/Treatment";
 import Estimatedtimeoffootlesion from "../Pages/Currentlesion/currentlesion.js";
+import Microbiological from "../Pages/dpage4/microprof"
 // import Estimated from "../Pages/Currentlesion/Estimated";
 
 export default function ListRouter() {
@@ -62,6 +63,9 @@ export default function ListRouter() {
         <Route path="/Antidiabetic&treatment">
           <Antidiabetic />
           <Treatment />
+        </Route>
+        <Route path="/Microbiological profile">
+          <Microbiological />
         </Route>
       </Switch>
     </Box>

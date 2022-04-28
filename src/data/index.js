@@ -32,7 +32,7 @@ export const menu1 = [
     path: "/Bio-chemicalinvestigations",
   },
   { title: "1.19 Anti-diabetic & Treatment", path: "/Antidiabetic&Treatment" },
-    
+  { title: "1.22 Microbiological profile", path: "/Microbiological profile" },
     ];
 export const menu2 = [
   { title: "Acute/Chronic" },
