@@ -11,6 +11,9 @@ import Dpage2 from "../Pages/dpage2";
 import Dpage3 from "../Pages/dpage3/dpage3";
 import Sinbad from "../Pages/Sinbad/Sinbad";
 import Estimated from "../Pages/Currentlesion/Estimated";
+import Jpage1 from "../Pages/jpage1";
+import Antidiabetic from "../Pages/Antidiabetic";
+import Treatment from "../Pages/Treatment";
 
 export default function ListRouter() {
   return (
@@ -48,6 +51,13 @@ export default function ListRouter() {
         </Route>
         <Route path="/Pulsations">
           <Pulsations />
+        </Route>
+        <Route path="/Bio-chemicalinvestigations">
+          <Jpage1 />
+        </Route>
+        <Route path="/Antidiabetic&treatment">
+          <Antidiabetic />
+          <Treatment />
         </Route>
       </Switch>
     </Box>

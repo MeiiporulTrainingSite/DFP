@@ -26,6 +26,11 @@ export const menu1 = [
   { title: "1.2 Diabetic Complications", path: "/DiabeticComplications" },
   { title: "1.3 Neuropathy", path: "/Neuropathy" },    
   // { title: "1.7 Estimated Time of foot lesion", path:'/Estimated Time of foot lesion' },
+  {
+    title: "1.18 Bio-chemical investigations",
+    path: "/Bio-chemicalinvestigations",
+  },
+  { title: "1.19 Anti-diabetic & Treatment", path: "/Antidiabetic&Treatment" },
     
     ];
 export const menu2 = [
