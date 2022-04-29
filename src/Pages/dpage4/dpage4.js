@@ -17,49 +17,6 @@ import { TextField, Input } from "@mui/material";
 
 // import Microbiological from "./microprof";
 export default function Dpage4() {
-  const data = [
-    {
-      id: 1,
-      label: "Gram Stain",
-      Pus: "microprofGramstainPus",
-      Soft_tissue: "microprof_Gramstain_Soft_tissue",
-      Boneaspiration_biopsy: "microprof_Gramstain_Boneaspiration_biopsy",
-      touched: formik.touched.microprofGramstainPus,
-      error: formik.errors.microprofGramstainPus,
-      // touched:formik.microprof_Gramstain_Soft_tissue,
-      // error:formik.errors.microprof_Gramstain_Soft_tissue,
-      // touched:formik.microprof_Gramstain_Boneaspiration_biopsy,
-      // error:formik.errors.microprof_Gramstain_Boneaspiration_biopsy,
-    },
-    {
-      id: 2,
-      label: "Growth(Baseline)",
-      Pus: "microprof_Growth_baseline_Pus",
-      Soft_tissue: "microprof_Growth_baseline_Soft_tissue",
-      Boneaspiration_biopsy: "microprof_Growth_baseline_Boneaspiration_biopsy",
-      // touched:formik.touched.microprof_Growth_baseline_Pus,
-      // error:formik.errors.microprof_Growth_baseline_Pus,
-      // touched:formik.touched.microprof_Growth_baseline_Pus,
-      // error:formik.errors.microprof_Growth_baseline_Pus,
-      // touched:formik.touched.microprof_Growth_baseline_Pus,
-      // error:formik.errors.microprof_Growth_baseline_Pus,
-    },
-    {
-      id: 3,
-      label: "Antibiotic Sensitivity",
-      Pus: "microprof_Antibiotic_sensitivity_Pus",
-      Soft_tissue: "microprof_Antibiotic_sensitivity_Soft_tissue",
-      Boneaspiration_biopsy:
-        "microprof_Antibiotic_sensitivity_Boneaspiration_biopsy",
-      //   touched:formik.touched.microprof_Antibiotic_sensitivity_Pus,
-      // error:formik.errors.microprof_Antibiotic_sensitivity_Pus,
-      // touched:formik.touched.microprof_Antibiotic_sensitivity_Soft_tissue,
-      // error:formik.errors.microprof_Antibiotic_sensitivity_Soft_tissue,
-      // touched:formik.touched.microprof_Antibiotic_sensitivity_Boneaspiration_biopsy,
-      // error:formik.microprof_Antibiotic_sensitivity_Boneaspiration_biopsy,
-    },
-  ];
-
   const formik = useFormik({
     initialValues: {
       prior: "",
@@ -112,6 +69,50 @@ export default function Dpage4() {
       alert(JSON.stringify(values, null, 2));
     },
   });
+  const data = [
+    {
+      id: 1,
+      label: "Gram Stain",
+      Pus: "microprofGramstainPus",
+      Soft_tissue: "microprof_Gramstain_Soft_tissue",
+      Boneaspiration_biopsy: "microprof_Gramstain_Boneaspiration_biopsy",
+      touched: formik.touched.microprofGramstainPus,
+      error: formik.errors.microprofGramstainPus,
+      // touched:formik.microprof_Gramstain_Soft_tissue,
+      // error:formik.errors.microprof_Gramstain_Soft_tissue,
+      // touched:formik.microprof_Gramstain_Boneaspiration_biopsy,
+      // error:formik.errors.microprof_Gramstain_Boneaspiration_biopsy,
+    },
+    {
+      id: 2,
+      label: "Growth(Baseline)",
+      Pus: "microprof_Growth_baseline_Pus",
+      Soft_tissue: "microprof_Growth_baseline_Soft_tissue",
+      Boneaspiration_biopsy: "microprof_Growth_baseline_Boneaspiration_biopsy",
+      // touched:formik.touched.microprof_Growth_baseline_Pus,
+      // error:formik.errors.microprof_Growth_baseline_Pus,
+      // touched:formik.touched.microprof_Growth_baseline_Pus,
+      // error:formik.errors.microprof_Growth_baseline_Pus,
+      // touched:formik.touched.microprof_Growth_baseline_Pus,
+      // error:formik.errors.microprof_Growth_baseline_Pus,
+    },
+    {
+      id: 3,
+      label: "Antibiotic Sensitivity",
+      Pus: "microprof_Antibiotic_sensitivity_Pus",
+      Soft_tissue: "microprof_Antibiotic_sensitivity_Soft_tissue",
+      Boneaspiration_biopsy:
+        "microprof_Antibiotic_sensitivity_Boneaspiration_biopsy",
+      //   touched:formik.touched.microprof_Antibiotic_sensitivity_Pus,
+      // error:formik.errors.microprof_Antibiotic_sensitivity_Pus,
+      // touched:formik.touched.microprof_Antibiotic_sensitivity_Soft_tissue,
+      // error:formik.errors.microprof_Antibiotic_sensitivity_Soft_tissue,
+      // touched:formik.touched.microprof_Antibiotic_sensitivity_Boneaspiration_biopsy,
+      // error:formik.microprof_Antibiotic_sensitivity_Boneaspiration_biopsy,
+    },
+  ];
+
+  
   return (
     <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem" }}>
       <Typography variant="h4" sx={{ mb: "1rem" }}>

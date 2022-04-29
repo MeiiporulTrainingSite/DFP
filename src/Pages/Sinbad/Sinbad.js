@@ -25,6 +25,10 @@ export default function Sinbad() {
         { Depth: { DepthD1: "", DepthD2: "" } },
         { TotalScore: "" },
       ],
+      users: [{
+        name: "deshan madurajith",
+        email: "desh@email.com"
+      }],
 
     Site1:"",
     Site2:""
@@ -37,6 +41,14 @@ export default function Sinbad() {
           Site2: Yup.string()
             .required("email required")
             // .email("Enter valid email")
+        })
+      ),
+      users: Yup.array().of(
+        Yup.object().shape({
+          name: Yup.string().required("Name required"),
+          email: Yup.string()
+            .required("email required")
+            .email("Enter valid email")
         })
       )
     }),
