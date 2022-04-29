@@ -139,7 +139,7 @@ export default function Observations() {
       <Grid container spacing={2}>
         <Grid item container md={12} lg={12}>
           <Grid item md={3} lg={3}>
-            <Typography sx={{ color: "#0AD0B2",mt:"0.5rem" }}>Callus</Typography>
+            <Typography sx={{ color: "#0AD0B2",mt:"0.5rem",fontSize:"1rem" }}>Callus</Typography>
           </Grid>
           <Grid item md={5} lg={5}>
             <CheckNone name="Callus" onChange={formik.handleChange} />

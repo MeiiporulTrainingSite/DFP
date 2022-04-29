@@ -19,6 +19,7 @@ import Dpage4 from "../Pages/dpage4/dpage4";
 // import Estimated from "../Pages/Currentlesion/Estimated";
 import Nds from "../Pages/NDS/nds";
 import Pedis from "../Pages/PEDIS/pedis";
+import VPT from "../Pages/VPTScore/VPTScore"
 
 export default function ListRouter() {
   return (
@@ -47,6 +48,9 @@ export default function ListRouter() {
         </Route>
         <Route path="/Sinbad">
           <Sinbad />
+        </Route>
+        <Route path="/VPTSCORE">
+          <VPT/>
         </Route>
         <Route path="/TCPO2">
           <Dpage1 />

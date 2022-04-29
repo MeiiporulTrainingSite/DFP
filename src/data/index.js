@@ -25,7 +25,7 @@ export const menu1 = [
   { title: "1.11 SINBAD", path: "/Sinbad" },
   { title: "1.12 Other Observations (Foot)", path: "/Observations" },
   { title: "1.13 Pulsations", path: "/Pulsations" },
-  { title: "1.14 VPT SCORE", path: "/VPT SCORE" },
+  { title: "1.14 VPT SCORE", path: "/VPTSCORE" },
   { title: "1.15 TCPO2 ", path: "/TCPO2" },
   { title: "1.16 Probe to bone test", path: "/Probe to bone test" },
   { title: "1.17 Radiography Findings", path: "/Radiography Findings" },
