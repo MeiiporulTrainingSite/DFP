@@ -8,9 +8,11 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { TextField, Input, Typography,Grid } from "@mui/material";
+import { TextField, Input, Typography, Grid, Box } from "@mui/material";
 import Textbox from "../../component/Textbox"
-import BasicTextFields from './texterror'
+import BasicTextFields from './texterror';
+import Estimatedprops from "./Estimatedprops";
+
 
 import {
   FormControl,
@@ -20,6 +22,7 @@ import {
   Checkbox,
   Button
 } from "@mui/material";
+
 
 const rows = [
   {
@@ -63,6 +66,9 @@ const rows = [
 export default function Estimatedtimeoffootlesion() {
   const formik = useFormik({
     initialValues: {
+      Years: "",
+      Months: "",
+      Days: "",
       currentlesion: [
         { toe: { right: "", left: "" } },
         { webspace: { right: "", left: "" } },
@@ -72,8 +78,8 @@ export default function Estimatedtimeoffootlesion() {
         { ankle: { right: "", left: "" } }
       ],
       wagnergrade: "",
-      texasstage:"",
-      texasgrade:""
+      texasstage: "",
+      texasgrade: ""
     },
     // validationSchema: Yup.object({
     //   currentlesion: Yup.object({
@@ -93,15 +99,45 @@ export default function Estimatedtimeoffootlesion() {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem 1.5rem 1.5rem 3.5rem" }}>
-      <TableContainer>
-        <Table sx={{ width: 520 }} aria-label="simple table">
+    <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem" }}>
 
+      <Grid container spacing={1} columnSpacing={1.5}>
+        <Grid item md={12} xl={12}>
+          <Typography variant="h4" >
+            Estimated Time of Foot Lesion
+          </Typography>
+        </Grid>
+        <Grid item md={1.5} xl={1.5}>
+          <Estimatedprops
+            name="Years"
+            onChange={formik.handleChange}
+            label="Years"
+            placeholder="Years"
+          />
+        </Grid>
+        <Grid item md={1.5} xl={1.5}>
+          <Estimatedprops
+            name="Months"
+            onChange={formik.handleChange}
+            label="Months"
+            placeholder="Months"
+          />
+        </Grid>
+        <Grid item md={1.5} xl={1.5}>
+          <Estimatedprops
+            name="Days"
+            onChange={formik.handleChange}
+            label="Days"
+            placeholder="Days"
+          />
+        </Grid>
+      </Grid>
+
+      <TableContainer>
+        <Table sx={{ width: 520, marginTop: '1rem' }} aria-label="simple table">
           <TableBody>
-            <TableRow component="h2" sx={{ width: 300 }}>
+            <TableRow component="h3" sx={{ width: 300, color:'primary.main' }}>
               Site of the Current Lesions
-              {/* <TableCell align="center">Right</TableCell>
-              <TableCell align="center">Left</TableCell> */}
             </TableRow>
             {rows.map((row, i) => (
               <TableRow key={row.i}>
@@ -138,7 +174,7 @@ export default function Estimatedtimeoffootlesion() {
             Severity of the lesion
           </TableCell>
           <TableCell align="left" >
-            <TextField sx={{width: '180px',m:'0 0 0 140px'}}
+            <TextField sx={{ width: '200px', m: '0 0 0 115px' }}
               label='WAGNER GRADE'
               type='number'
               name='wagnergrade'
@@ -152,7 +188,7 @@ export default function Estimatedtimeoffootlesion() {
             TEXAS
           </TableCell>
           <TableCell >
-            <TextField sx={{ width: '75px', m: '0px 30px 0px 140px' }}
+            <TextField sx={{ width: '75px', m: '0px 50px 0px 115px' }}
               label='Stage'
               type='text'
               name='texasstage'
@@ -160,7 +196,7 @@ export default function Estimatedtimeoffootlesion() {
               variant="outlined"
               onChange={formik.handleChange}
             />
-            <TextField sx={{ width: '75px'}}
+            <TextField sx={{ width: '75px' }}
               label='Grade'
               type='text'
               name='texasgrade'
@@ -168,37 +204,31 @@ export default function Estimatedtimeoffootlesion() {
               variant="outlined"
               onChange={formik.handleChange} />
           </TableCell>
-          
-          </TableRow>
-          
-          <Grid item md={12} lg={12} align="right">
-      <Button
+        </TableRow>
+        <Grid item md={12} lg={12} align="right">
+          <Button
             type="submit"
-            sx={{ backgroundColor: "#0AD0B2", color: "#fff", ":hover": {
-              border:"1px solid #0AD0B2",
-              color: "#0AD0B2"
-            },marginRight:"1rem" }}
+            sx={{
+              backgroundColor: "#0AD0B2", color: "#fff", ":hover": {
+                border: "1px solid #0AD0B2",
+                color: "#0AD0B2"
+              }, marginRight: "1rem"
+            }}
           >
-           
-           Save
-            
+            Save
           </Button>
           <Button
-           
-           
-            sx={{ backgroundColor: "#0AD0B2", color: "#fff", ":hover": {
-              border:"1px solid #0AD0B2",
-              color: "#0AD0B2"
-            } }}
+            sx={{
+              backgroundColor: "#0AD0B2", color: "#fff", ":hover": {
+                border: "1px solid #0AD0B2",
+                color: "#0AD0B2"
+              }
+            }}
           >
-           
-           next
-            
+            next
           </Button>
-          </Grid>
-        
+        </Grid>
       </TableContainer>
-     
     </form>
   );
 }

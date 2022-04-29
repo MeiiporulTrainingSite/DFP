@@ -15,8 +15,10 @@ import Jpage1 from "../Pages/jpage1";
 import Antidiabetic from "../Pages/Antidiabetic";
 import Treatment from "../Pages/Treatment";
 import Estimatedtimeoffootlesion from "../Pages/Currentlesion/currentlesion.js";
-import Microbiological from "../Pages/dpage4/microprof"
+import Dpage4 from "../Pages/dpage4/dpage4";
 // import Estimated from "../Pages/Currentlesion/Estimated";
+import Nds from "../Pages/NDS/nds";
+import Pedis from "../Pages/PEDIS/pedis";
 
 export default function ListRouter() {
   return (
@@ -34,11 +36,15 @@ export default function ListRouter() {
         <Route path="/RutherfordGrade">
           <Page4 />
         </Route>
-        <Route path = "/Footlesion">
-        <Estimatedtimeoffootlesion/></Route>
-        {/* <Route path="/Lesion">
-          <Estimated />
-        </Route> */}
+        <Route path="/Footlesion">
+          <Estimatedtimeoffootlesion />
+        </Route>
+        <Route path="/nds">
+          <Nds />
+        </Route>
+        <Route path="/pedis">
+          <Pedis />
+        </Route>
         <Route path="/Sinbad">
           <Sinbad />
         </Route>
@@ -64,8 +70,8 @@ export default function ListRouter() {
           <Antidiabetic />
           <Treatment />
         </Route>
-        <Route path="/Microbiological profile">
-          <Microbiological />
+        <Route path="/Antibiotic Related Date">
+          <Dpage4 />
         </Route>
       </Switch>
     </Box>

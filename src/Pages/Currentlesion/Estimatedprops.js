@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 const min = 1;
 const max = 100;
 
-export default function EstimatedTime(props) {
+export default function Estimatedprops(props) {
   const [value, setValue] = useState();
 
   return (
@@ -13,6 +13,7 @@ export default function EstimatedTime(props) {
     //   {/* <Menu> */}
     //   <Grid item md={6} xl={6}>
         <TextField
+        // sx={{width:'80px',m:'0 1rem'}}
           name={props.name}
           type="number"
           inputProps={{ min, max }}
