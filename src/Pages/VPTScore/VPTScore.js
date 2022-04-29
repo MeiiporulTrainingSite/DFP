@@ -30,22 +30,26 @@ export default function VPT() {
     label:"AB Index(ABI)"
 },
 {
-    label:"Follow Up"
+    label:"Follow Up",
+    textarea:"3"
 },
 {
-    label:"Follow Up"
+    label:"Toe Brachial Index(TBI)"
 },
 {
-    label:"Follow Up"
+    label:"Temperature (warm)"
 },
 {
-    label:"Follow Up"
+    label:"Follow Up",
+    textarea:"3"
 },
 {
-    label:"Follow Up"
+    label:"Temperature (cold)",
+
 },
 {
-    label:"Follow Up"
+    label:"Follow Up",
+    textarea:"3"
 }]
   return (
     <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem" }}>
@@ -55,7 +59,7 @@ export default function VPT() {
       <Grid container spacing={1.5}>
         <Grid item md={12} mb={"1rem"}>
           <Grid container spacing={2}>
-            <Grid item md={3}>
+            <Grid item md={3} >
               <Typography sx={{ fontSize: "1.2rem", }}>
                 
               </Typography>
@@ -75,14 +79,14 @@ export default function VPT() {
         {score.map((vpt, i) => (
           <Grid item md={12} key={i + 1}>
             <Grid container spacing={2}>
-              <Grid item md={3}>
-                <Typography sx={{ fontSize: "1rem", color: "#0AD0B2" ,mt:"1rem"}}>{vpt.label}</Typography>
+              <Grid item md={3} sx={{display:"flex",alignItems:"center"}}>
+                <Typography sx={{ fontSize: "1rem", color: "#0AD0B2" }}>{vpt.label}</Typography>
               </Grid>
               <Grid item md={4}>
-                <Textbox/>
+                <Textbox textarea={vpt.textarea} />
               </Grid>
               <Grid item md={4}>
-              <Textbox/>
+              <Textbox textarea={vpt.textarea}/>
                 </Grid>
                 </Grid>
                 </Grid>
