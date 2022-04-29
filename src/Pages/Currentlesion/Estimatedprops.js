@@ -13,7 +13,7 @@ export default function Estimatedprops(props) {
     //   {/* <Menu> */}
     //   <Grid item md={6} xl={6}>
         <TextField
-        // sx={{width:'80px',m:'0 1rem'}}
+        sx={{width:'100%'}}
           name={props.name}
           type="number"
           inputProps={{ min, max }}

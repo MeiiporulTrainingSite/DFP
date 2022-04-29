@@ -9,59 +9,15 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { TextField, Input, Typography, Grid, Box } from "@mui/material";
-import Textbox from "../../component/Textbox"
+
 import BasicTextFields from './texterror';
 import Estimatedprops from "./Estimatedprops";
-
-
+import SelectCom from "./selectlesion";
+import RadioCom from "./radiolesion";
 import {
-  FormControl,
-  Select,
-  MenuItem,
-  InputLabel,
-  Checkbox,
+ 
   Button
 } from "@mui/material";
-
-
-const rows = [
-  {
-    id: 1,
-    label: "Toe",
-    selectright: "currentlesion[0].toe.right",
-    selectleft: "currentlesion[0].toe.left"
-  },
-  {
-    id: 2,
-    label: "Webspace",
-    selectright: "currentlesion[1].webspace.right",
-    selectleft: "currentlesion[1].webspace.left"
-  },
-  {
-    id: 3,
-    label: "Forefoot",
-    selectright: "currentlesion[2].forefoot.right",
-    selectleft: "currentlesion[2].forefoot.left"
-  },
-  {
-    id: 4,
-    label: "Midfoot",
-    selectright: "currentlesion[3].midfoot.right",
-    selectleft: "currentlesion[3].midfoot.left"
-  },
-  {
-    id: 5,
-    label: "Heel",
-    selectright: "currentlesion[4].heel.right",
-    selectleft: "currentlesion[4].heel.left"
-  },
-  {
-    id: 6,
-    label: "Ankle/Lowerleg",
-    selectright: "currentlesion[5].ankle.right",
-    selectleft: "currentlesion[5].ankle.left"
-  }
-];
 
 export default function Estimatedtimeoffootlesion() {
   const formik = useFormik({
@@ -69,34 +25,104 @@ export default function Estimatedtimeoffootlesion() {
       Years: "",
       Months: "",
       Days: "",
-      currentlesion: [
-        { toe: { right: "", left: "" } },
-        { webspace: { right: "", left: "" } },
-        { forefoot: { right: "", left: "" } },
-        { midfoot: { right: "", left: "" } },
-        { heel: { right: "", left: "" } },
-        { ankle: { right: "", left: "" } }
-      ],
+      footwear:"",
+      preexisting_callus_leading_to_ulcer:"",
+      currentlesion_toe_right: "",
+      currentlesion_toe_left: "",
+      currentlesion_webspace_right: "",
+      currentlesion_webspace_left: "",
+      currentlesion_forefoot_right: "",
+      currentlesion_forefoot_left: "",
+      currentlesion_midfoot_right: "",
+      currentlesion_midfoot_left: "",
+      currentlesion_heel_right: "",
+      currentlesion_midfoot_left: "",
+      currentlesion_heel_right: "",
+      currentlesion_heel_left: "",
+      currentlesion_ankle_right: "",
+      currentlesion_ankle_left: "",
       wagnergrade: "",
       texasstage: "",
       texasgrade: ""
     },
-    // validationSchema: Yup.object({
-    //   currentlesion: Yup.object({
-    //     toe: Yup.string().required
-    //   })
-    //   //   Yup.object({
-    //   //     toe:Yup.object({
-    //   //       right: Yup.string().matches([0-9], "Must be only digits"),
-    //   //       left: Yup.string().matches([0-9], "Must be only digits")
-    //   //     })
-    //   //  })
-    // }),
+    validationSchema: Yup.object({
+      currentlesion_toe_right: Yup.string().required("required"),
+      footwear:Yup.string().required("required"),
+      preexisting_callus_leading_to_ulcer:Yup.string().required("required"),
+      wagnergrade: Yup.string().required("required")
+    }),
 
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     }
   });
+  const footwear= [
+    {
+      value: "Injury",
+      item: "Injury"
+    },
+    {
+      value: "Burn",
+      item: "Burn"
+    },
+    {
+      value: "Other",
+      item: "Other"
+    },
+  ];
+  const callus = [
+    {
+      value: "Accident",
+      label: "Accident",
+      name: "preexisting_callus_leading_to_ulcer"
+    },
+    {
+      value: "unknown",
+      label: "Unknown",
+      name: "preexisting_callus_leading_to_ulcer"
+    }
+  ];
+
+  const rows = [
+    {
+      id: 1,
+      label: "Toe",
+      selectright: "currentlesion_toe_right",
+      selectleft: "currentlesion_toe_left",
+      touched: formik.touched.currentlesion_toe_right,
+      error: formik.errors.currentlesion_toe_right
+    },
+    {
+      id: 2,
+      label: "Webspace",
+      selectright: "currentlesion_webspace_right",
+      selectleft: "currentlesion_webspace_left"
+    },
+    {
+      id: 3,
+      label: "Forefoot",
+      selectright: "currentlesion_forefoot_right",
+      selectleft: "currentlesion_forefoot_left"
+    },
+    {
+      id: 4,
+      label: "Midfoot",
+      selectright: "currentlesion_midfoot_right",
+      selectleft: "currentlesion_midfoot_left"
+    },
+    {
+      id: 5,
+      label: "Heel",
+      selectright: "currentlesion_heel_right",
+      selectleft: "currentlesion_heel_left"
+    },
+    {
+      id: 6,
+      label: "Ankle/Lowerleg",
+      selectright: "currentlesion_ankle_right",
+      selectleft: "currentlesion_ankle_left"
+    }
+  ];
 
   return (
     <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem" }}>
@@ -131,12 +157,38 @@ export default function Estimatedtimeoffootlesion() {
             placeholder="Days"
           />
         </Grid>
-      </Grid>
+      
+        <Grid item md={8} xl={8}>
+        <Typography sx={{ fontSize:"18px",fontWeight:"bold",color: 'primary.main' }} >
+                Footwear related
+            </Typography>
+        <SelectCom
+            select={footwear}
+            name="footwear"
+            label="Footwear realted"
+            InputLabel="Footwear realted"
+            onChange={formik.handleChange}
+          />
+          {formik.touched.footwear && formik.errors.footwear ? (
+            <p className="error">*{formik.errors.footwear}*</p>
+          ) : null}
+          </Grid>
+<Grid item md={8} xl={8}>
+<RadioCom
+            radio={callus}
+            OnChange={formik.handleChange}
+            FormLabel="Preexisting callus leading to ulcer"
+          />
+          {formik.touched.preexisting_callus_leading_to_ulcer && formik.errors.preexisting_callus_leading_to_ulcer ? (
+            <p className="error">*{formik.errors.preexisting_callus_leading_to_ulcer}*</p>
+          ) : null}
+</Grid>
+          </Grid>
 
       <TableContainer>
         <Table sx={{ width: 520, marginTop: '1rem' }} aria-label="simple table">
           <TableBody>
-            <TableRow component="h3" sx={{ width: 300, color:'primary.main' }}>
+            <TableRow  sx={{ width:"300",fontSize:"18px",fontWeight:"bold",color: 'primary.main' }}>
               Site of the Current Lesions
             </TableRow>
             {rows.map((row, i) => (
@@ -151,10 +203,7 @@ export default function Estimatedtimeoffootlesion() {
                     label="Right"
                     placeholder="Right"
                   />
-                  {/* <ErrorMessage name= {row.selectright} /> */}
-                  {/* {formik.touched.[currentlesion.toe]}&& formik.errors.[currentlesion.toe]? (
-        <p>*{formik.errors.[currentlesion.toe]}*</p>
-      ) : null}  */}
+                  {row.touched && row.error ? (<p>{row.error}</p>) : null}
                 </TableCell>
                 <TableCell align="center">
                   <BasicTextFields
@@ -163,7 +212,7 @@ export default function Estimatedtimeoffootlesion() {
                     label="Left"
                     placeholder="Left"
                   />
-                  {/* <ErrorMessage name= {row.selectright} /> */}
+
                 </TableCell>
               </TableRow>
             ))}
@@ -181,6 +230,7 @@ export default function Estimatedtimeoffootlesion() {
               placeholder='WAGNER GRADE'
               variant="outlined"
               onChange={formik.handleChange} />
+            {formik.touched.wagnergrade && formik.errors.wagnergrade ? (<p>{formik.errors.wagnergrade}</p>) : null}
           </TableCell>
         </TableRow>
         <TableRow>
