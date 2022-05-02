@@ -14,7 +14,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { TextField, Input } from "@mui/material";
-
+import RadioCom from "./Radio";
+import { SpaceBar } from "@mui/icons-material";
 // import Microbiological from "./microprof";
 export default function Dpage4() {
   const formik = useFormik({
@@ -32,6 +33,11 @@ export default function Dpage4() {
       microprof_Antibiotic_sensitivity_Pus: "",
       microprof_Antibiotic_sensitivity_Soft_tissue: "",
       microprof_Antibiotic_sensitivity_Boneaspiration_biopsy: "",
+      Radio: "",
+      Amputation: "",
+      Amputationfreesurvival: "",
+      Ambulatory: "",
+      sequel:""
       // microprof: [
       //   { Gramstain: { Pus: "", Soft_tissue: "", Boneaspiration_biopsy: "" } },
       //   {
@@ -55,7 +61,12 @@ export default function Dpage4() {
       antibiotic: Yup.string().required("Required"),
       whichantibiotic: Yup.string().required("Required"),
       duration: Yup.string().required("Required"),
-      microprofGramstainPus: Yup.string().required("Required"),
+      Radio: Yup.string().required("Required"),
+      Amputation: Yup.string().required("Required"),
+      Amputationfreesurvival: Yup.string().required("Required"),
+      Ambulatory: Yup.string().required("Required"),
+      sequel:Yup.string().required("Required"),
+      // microprofGramstainPus: Yup.string().required("Required"),
       // microprof_Gramstain_Soft_tissue:Yup.string().required("Required"),
       // microprof_Gramstain_Boneaspiration_biopsy: Yup.string().required("Required"),
       // microprof_Growth_baseline_Pus:Yup.string().required("Required"),
@@ -76,8 +87,8 @@ export default function Dpage4() {
       Pus: "microprofGramstainPus",
       Soft_tissue: "microprof_Gramstain_Soft_tissue",
       Boneaspiration_biopsy: "microprof_Gramstain_Boneaspiration_biopsy",
-      touched: formik.touched.microprofGramstainPus,
-      error: formik.errors.microprofGramstainPus,
+      // touched: formik.touched.microprofGramstainPus,
+      // error: formik.errors.microprofGramstainPus,
       // touched:formik.microprof_Gramstain_Soft_tissue,
       // error:formik.errors.microprof_Gramstain_Soft_tissue,
       // touched:formik.microprof_Gramstain_Boneaspiration_biopsy,
@@ -112,7 +123,23 @@ export default function Dpage4() {
     },
   ];
 
-  
+  const radio = [
+    {
+      value: "Completely healed ",
+      label: "Completely healed ",
+      name: "Radio",
+    },
+    {
+      value: "Partially healed",
+      label: "Partially healed",
+      name: "Radio",
+    },
+    {
+      value: "Worsened",
+      label: "Worsened",
+      name: "Radio",
+    },
+  ];
   return (
     <form onSubmit={formik.handleSubmit} style={{ padding: "1.5rem" }}>
       <Typography variant="h4" sx={{ mb: "1rem" }}>
@@ -153,7 +180,7 @@ export default function Dpage4() {
         <Typography
           sx={{
             color: "#0AD0B2",
-            fontSize: "1rem",
+            fontSize: "1.2rem",
             mb: "0.3rem",
             mt: "0.5rem",
           }}
@@ -191,7 +218,14 @@ export default function Dpage4() {
           ) : null}
         </Grid>
         <Grid item md={12} xl={12}>
-          <Typography variant="h4" sx={{ mt: "0.5rem", mb: "0.2rem" }}>
+          <Typography
+            sx={{
+              color: "#0AD0B2",
+              fontSize: "1.2rem",
+              mb: "0.3rem",
+              mt: "0.5rem",
+            }}
+          >
             Microbiological Profile
           </Typography>
           <TableContainer>
@@ -200,7 +234,11 @@ export default function Dpage4() {
                 {data.map((row, i) => (
                   <TableRow key={row.i}>
                     <TableCell
-                      sx={{ width: "250px", fontSize: "1.1rem" }}
+                      sx={{
+                        width: "250px",
+                        height: "20px",
+                        fontSize: "1.1rem",
+                      }}
                       padding="checkbox"
                       component="th"
                       scope="row"
@@ -219,7 +257,7 @@ export default function Dpage4() {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                       />
-                      {row.touched && row.error ? <p>*{row.error}*</p> : null}
+                      {/* {row.touched && row.error ? <p>*{row.error}*</p> : null} */}
                     </TableCell>
                     <TableCell align="center">
                       <TextField
@@ -254,6 +292,115 @@ export default function Dpage4() {
               </TableBody>
             </Table>
           </TableContainer>
+        </Grid>
+        <Grid item md={6} xl={12}>
+          <Typography
+            sx={{
+              color: "#0AD0B2",
+              fontSize: "1.2rem",
+              mb: "0.3rem",
+              mt: "0.5rem",
+            }}
+          >
+            Outcome at 3 months
+          </Typography>
+          <Grid item md={6} xl={12}>
+            <RadioCom
+              radio={radio}
+              OnChange={formik.handleChange}
+              FormLabel="Status of Ulcer:"
+            />
+            {formik.touched.Radio && formik.errors.Radio ? (
+              <p className="error">*{formik.errors.Radio}*</p>
+            ) : null}
+          </Grid>
+        </Grid>
+        <Grid item md={12} xl={12}>
+          <Textbox
+            label="Amputation"
+            type="text"
+            name="Amputation"
+            placeholder="Enter Amputation Data"
+            variant="outlined"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            fullWidth
+          />
+          {formik.touched.Amputation && formik.errors.Amputation ? (
+            <p className="error">*{formik.errors.Amputation}*</p>
+          ) : null}
+        </Grid>
+        <Grid item md={12} xl={12}>
+          <Typography
+            sx={{
+              color: "#0AD0B2",
+              fontSize: "1.2rem",
+              mb: "0.3rem",
+              mt: "0.5rem",
+            }}
+          >
+            Outcome(Long Term)
+          </Typography>
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item md={6} xl={6}>
+            <Textbox
+              label="Amputation free survival"
+              type="text"
+              name="Amputationfreesurvival"
+              placeholder="Enter Amputation free survival Data"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              fullWidth
+            />
+            {formik.touched.Amputationfreesurvival &&
+            formik.errors.Amputationfreesurvival ? (
+              <p className="error">*{formik.errors.Amputationfreesurvival}*</p>
+            ) : null}
+          </Grid>
+          <Grid item md={6} xl={6}>
+            <Textbox
+              label="Ambulatory (Plantigrade foot)"
+              type="text"
+              name="Ambulatory"
+              placeholder="Enter Ambulatory (Plantigrade foot) Data"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              fullWidth
+            />
+            {formik.touched.Ambulatory && formik.errors.Ambulatory ? (
+              <p className="error">*{formik.errors.Ambulatory}*</p>
+            ) : null}
+          </Grid>
+        </Grid>
+        <Grid item md={12} xl={12}>
+          <Typography
+            sx={{
+              color: "#0AD0B2",
+              fontSize: "1.2rem",
+              mb: "0.3rem",
+              mt: "0.5rem",
+            }}
+          >
+           Sequel of Treatment:
+          </Typography>
+          <Grid item md={12} xl={12}>
+          <Textbox
+            label="Sequel of Treatment"
+            type="text"
+            name="sequel"
+            placeholder="Enter Sequel of Treatment Data"
+            variant="outlined"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            fullWidth
+          />
+          {formik.touched.sequel && formik.errors.sequel ? (
+            <p className="error">*{formik.errors.sequel}*</p>
+          ) : null}
+        </Grid>
         </Grid>
         <Grid item md={12} lg={12} align="right">
           <Button

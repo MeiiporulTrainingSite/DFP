@@ -138,7 +138,7 @@ export default function Pedis() {
               <TableCell align ='center'>
                 <Textbox
                   label="Extent/Size"
-                  type="number"
+                  // type="number"
                   name="Size"
                   placeholder="Extent/Size"
                   variant="outlined"
