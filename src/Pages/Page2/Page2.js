@@ -186,23 +186,34 @@ export default function Page2() {
           ) : null}
         </Grid>
         <Grid item md={12} lg={12} align="right">
-        {/* <Link to ="/DNS Score"> */}
-          <Button
-          // onClick={onClick}
-            type="submit"
-            sx={{
-              backgroundColor: "#0AD0B2",
-              color: "#fff",
-              ":hover": {
-                border: "1px solid #0AD0B2",
-                color: "#0AD0B2",
-              },
-            }}
-          >
-            Continue
-          </Button>
-          {/* </Link> */}
-        </Grid>
+        <Button
+          type="submit"
+          sx={{
+            backgroundColor: "#0AD0B2",
+            color: "#fff",
+            ":hover": {
+              border: "1px solid #0AD0B2",
+              color: "#0AD0B2"
+            },
+            marginRight: "1rem"
+          }}
+        >
+          Save
+        </Button>
+
+        <Button
+          sx={{
+            backgroundColor: "#0AD0B2",
+            color: "#fff",
+            ":hover": {
+              border: "1px solid #0AD0B2",
+              color: "#0AD0B2"
+            }
+          }}
+        >
+          next
+        </Button>
+      </Grid>
       </Grid>
     </form>
   );

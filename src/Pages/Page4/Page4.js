@@ -200,21 +200,38 @@ export default function Page4() {
                         <p className="error">*{formik.errors.historyPresentUlcer}*</p>
                     ) : null}
                 </Grid>
-
-
                 <Grid item md={12} lg={12} align="right">
-                    <Button
-                        type="submit"
-                        sx={{
-                            backgroundColor: "#0AD0B2", color: "#fff", ":hover": {
-                                border: "1px solid #0AD0B2",
-                                color: "#0AD0B2"
-                            }
-                        }}
-                    >
-                        Continue
-                    </Button>
-                </Grid>
+        <Button
+          type="submit"
+          sx={{
+            backgroundColor: "#0AD0B2",
+            color: "#fff",
+            ":hover": {
+              border: "1px solid #0AD0B2",
+              color: "#0AD0B2"
+            },
+            marginRight: "1rem"
+          }}
+        >
+          Save
+        </Button>
+
+        <Button
+          sx={{
+            backgroundColor: "#0AD0B2",
+            color: "#fff",
+            ":hover": {
+              border: "1px solid #0AD0B2",
+              color: "#0AD0B2"
+            }
+          }}
+        >
+          next
+        </Button>
+      </Grid>
+
+
+               
             </Grid>
         </form>
 
