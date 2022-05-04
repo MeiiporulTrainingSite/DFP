@@ -2,10 +2,10 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button, Typography, TextField } from "@mui/material";
 
-import Textbox from "../component/Textbox";
+import Textbox from "../../component/Textbox";
 import Grid from "@mui/material/Grid";
 
-import "../App.css";
+import "../../App.css";
 
 import React from "react";
 

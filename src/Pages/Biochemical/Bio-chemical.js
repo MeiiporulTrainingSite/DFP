@@ -5,7 +5,7 @@ import InputAdorn from "./inputadornment";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
-import "../App.css";
+import "../../App.css";
 
 import React from "react";
 import { makeStyles } from "@mui/material";
@@ -67,7 +67,7 @@ const Biochemicalinput1 = [
   },
 ];
 
-export default function Jpage1() {
+export default function Biochemical() {
   const formik = useFormik({
     initialValues: {
       fbg: "",
@@ -92,9 +92,9 @@ export default function Jpage1() {
       VitD3: "",
     },
     validationSchema: Yup.object({
-      fbg: Yup.string().required("Required"),
-      ppbg: Yup.string().required("Required"),
-      HbA1C: Yup.string().required("Required"),
+      // fbg: Yup.string().required("Required"),
+      // ppbg: Yup.string().required("Required"),
+      // HbA1C: Yup.string().required("Required"),
     }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -301,6 +301,7 @@ export default function Jpage1() {
         <Grid item md={12} lg={12} align="right">
           <Button
             type="submit"
+            // onClick={onClick}
             sx={{
               backgroundColor: "#0AD0B2",
               color: "#fff",
@@ -308,10 +309,26 @@ export default function Jpage1() {
                 border: "1px solid #0AD0B2",
                 color: "#0AD0B2",
               },
+              marginRight: "1rem",
             }}
           >
-            Continue
+            Save
           </Button>
+          {/* <Link to="/Probe to bone test"> */}
+            <Button
+              // onClick={onClick}
+              sx={{
+                backgroundColor: "#0AD0B2",
+                color: "#fff",
+                ":hover": {
+                  border: "1px solid #0AD0B2",
+                  color: "#0AD0B2",
+                },
+              }}
+            >
+              next
+            </Button>
+          {/* </Link> */}
         </Grid>
       </Grid>
     </form>

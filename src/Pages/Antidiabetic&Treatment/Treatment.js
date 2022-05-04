@@ -213,6 +213,7 @@ import {
           <Grid item md={12} lg={12} align="right">
           <Button
             type="submit"
+            // onClick={onClick}
             sx={{
               backgroundColor: "#0AD0B2",
               color: "#fff",
@@ -220,10 +221,26 @@ import {
                 border: "1px solid #0AD0B2",
                 color: "#0AD0B2",
               },
+              marginRight: "1rem",
             }}
           >
-            Continue
+            Save
           </Button>
+          {/* <Link to="/Probe to bone test"> */}
+            <Button
+              // onClick={onClick}
+              sx={{
+                backgroundColor: "#0AD0B2",
+                color: "#fff",
+                ":hover": {
+                  border: "1px solid #0AD0B2",
+                  color: "#0AD0B2",
+                },
+              }}
+            >
+              next
+            </Button>
+          {/* </Link> */}
         </Grid>
         </Grid>
       </form>

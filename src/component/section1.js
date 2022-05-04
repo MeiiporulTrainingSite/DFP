@@ -1,6 +1,7 @@
 import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import ControlCameraIcon from '@mui/icons-material/ControlCamera';
 import Box from "@mui/material/Box";
 import { Grid, Paper, Typography, makeStyles } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -14,15 +15,23 @@ export default function Section1() {
     <List>
       {menu1.map((list, i) => (
         <Box key={i}>
-          <ListItem button sx={{ padding: "2px" }}>
+
+          <ListItem
+       
+          button className="hoverLink" sx={{ padding: "2px" }}>
+          
+            {list.icon }
             <Typography
               sx={{
-                fontSize: "0.8rem",
+                fontSize: "1rem",
                 mb: "2.5px",
+                ml:"1px",
+                // color:"primary"
               }}
             >
+
               <Link to={list.path} className="hoverLink">
-                {list.title}{" "}
+               {list.title}{" "}
               </Link>
             </Typography>
           </ListItem>

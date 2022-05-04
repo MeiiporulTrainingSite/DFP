@@ -47,11 +47,11 @@ const columns = [
   },
   {
     id: 7,
-    label: " Type1",
+    label: " Type1 Insulin",
   },
   {
     id: 8,
-    label: " Type2",
+    label: " Type2 Insulin",
   },
 ];
 const Doslist = [
@@ -130,7 +130,7 @@ export default function Antidiabetic() {
       <TableContainer>
         <Table>
           <TableBody>
-            <TableRow component="h2">Anti-diabetic treatment</TableRow>
+            <TableRow ><Typography variant="h4">Anti-diabetic treatment</Typography></TableRow>
             <TableRow>
               <TextField
                 sx={{ width: "60vw", m: "1rem", color: "primary.main" }}
@@ -165,8 +165,8 @@ export default function Antidiabetic() {
                   <TableCell key={dogelist + i} component="th" scope="column">
                     <Dosagetext
                       sx={{ color: "primary.main" }}
-                      label={dogelist.label}
-                      placeholder={dogelist.placeholder}
+                      // label={dogelist.label}
+                      // placeholder={dogelist.placeholder}
                       name={dogelist.text}
                       onChange={formik.handleChange}
                     />
@@ -178,19 +178,7 @@ export default function Antidiabetic() {
         </Table>
       </TableContainer>
 
-      <Button
-        type="submit"
-        sx={{
-          backgroundColor: "#0AD0B2",
-          color: "#fff",
-          ":hover": {
-            border: "1px solid #0AD0B2",
-            color: "#0AD0B2",
-          },
-        }}
-      >
-        Continue
-      </Button>
+      
     </form>
   );
 }

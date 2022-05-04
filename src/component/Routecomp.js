@@ -10,15 +10,15 @@ import Dpage1 from "../Pages/dpage1";
 import Dpage2 from "../Pages/dpage2";
 import Dpage3 from "../Pages/dpage3/dpage3";
 import Sinbad from "../Pages/Sinbad/Sinbad";
-import Jpage1 from "../Pages/jpage1";
-import Antidiabetic from "../Pages/Antidiabetic";
-import Treatment from "../Pages/Treatment";
+import Biochemical from "../Pages/Biochemical/Bio-chemical";
+import Antidiabetic from "../Pages/Antidiabetic&Treatment/Antidiabetic";
+import Treatment from "../Pages/Antidiabetic&Treatment/Treatment";
 import Estimatedtimeoffootlesion from "../Pages/Currentlesion/currentlesion.js";
-import Dpage4 from "../Pages/dpage4/dpage4";
+import Antibiotic from "../Pages/Antibiotic/Antibiotic";
 // import Estimated from "../Pages/Currentlesion/Estimated";
 import Nds from "../Pages/NDS/nds";
 import Pedis from "../Pages/PEDIS/pedis";
-import VPT from "../Pages/VPTScore/VPTScore"
+import VPT from "../Pages/VPTScore/VPTScore";
 
 export default function ListRouter() {
   return (
@@ -49,7 +49,7 @@ export default function ListRouter() {
           <Sinbad />
         </Route>
         <Route path="/VPTSCORE">
-          <VPT/>
+          <VPT />
         </Route>
         <Route path="/TCPO2">
           <Dpage1 />
@@ -67,14 +67,14 @@ export default function ListRouter() {
           <Pulsations />
         </Route>
         <Route path="/Bio-chemicalinvestigations">
-          <Jpage1 />
+          <Biochemical />
         </Route>
         <Route path="/Antidiabetic&treatment">
           <Antidiabetic />
           <Treatment />
         </Route>
         <Route path="/Antibiotic Related Date">
-          <Dpage4 />
+          <Antibiotic/>
         </Route>
       </Switch>
     </Box>

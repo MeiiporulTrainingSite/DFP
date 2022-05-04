@@ -17,7 +17,7 @@ import { TextField, Input } from "@mui/material";
 import RadioCom from "./Radio";
 import { SpaceBar } from "@mui/icons-material";
 // import Microbiological from "./microprof";
-export default function Dpage4() {
+export default function Antibiotic() {
   const formik = useFormik({
     initialValues: {
       prior: "",
@@ -304,7 +304,7 @@ export default function Dpage4() {
           >
             Outcome at 3 months
           </Typography>
-          <Grid item md={6} xl={12}>
+          <Grid item md={12} xl={12}>
             <RadioCom
               radio={radio}
               OnChange={formik.handleChange}
@@ -405,6 +405,7 @@ export default function Dpage4() {
         <Grid item md={12} lg={12} align="right">
           <Button
             type="submit"
+            // onClick={onClick}
             sx={{
               backgroundColor: "#0AD0B2",
               color: "#fff",
@@ -412,10 +413,26 @@ export default function Dpage4() {
                 border: "1px solid #0AD0B2",
                 color: "#0AD0B2",
               },
+              marginRight: "1rem",
             }}
           >
-            Continue
+            Save
           </Button>
+          {/* <Link to="/Probe to bone test"> */}
+            <Button
+              // onClick={onClick}
+              sx={{
+                backgroundColor: "#0AD0B2",
+                color: "#fff",
+                ":hover": {
+                  border: "1px solid #0AD0B2",
+                  color: "#0AD0B2",
+                },
+              }}
+            >
+              next
+            </Button>
+          {/* </Link> */}
         </Grid>
       </Grid>
     </form>

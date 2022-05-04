@@ -14,7 +14,7 @@ export default function RadioCom(props) {
           {props.FormLabel}
         </FormLabel>
         <RadioGroup
-          row
+         row
           aria-labelledby="demo-radio-buttons-group-label"
           onChange={props.OnChange}
         >
@@ -25,7 +25,7 @@ export default function RadioCom(props) {
               value={data.value}
               control={<Radio />}
               label={data.label}
-              sx={{ mr: "8rem", textAlign: "spaceAround" }}
+              // sx={{ mr: "2rem", textAlign: "spaceAround" }}
             />
           ))}
         </RadioGroup>
