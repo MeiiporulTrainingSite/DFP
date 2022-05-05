@@ -9,7 +9,7 @@ import {
    export default function RadioCom(props) {
      return (
        <FormControl>
-         <FormLabel sx={{fontSize:"18px",fontWeight:"bold",color: 'primary.main'}}>{props.FormLabel}</FormLabel>
+         <FormLabel sx={{fontSize:"16px",color: 'primary.main'}}>{props.FormLabel}</FormLabel>
          <RadioGroup
            row
            onChange={props.OnChange}

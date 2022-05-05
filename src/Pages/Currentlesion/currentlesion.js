@@ -15,7 +15,7 @@ import Estimatedprops from "./Estimatedprops";
 import SelectCom from "./selectlesion";
 import RadioCom from "./radiolesion";
 import {
- 
+
   Button
 } from "@mui/material";
 
@@ -25,8 +25,8 @@ export default function Estimatedtimeoffootlesion() {
       Years: "",
       Months: "",
       Days: "",
-      footwear:"",
-      preexisting_callus_leading_to_ulcer:"",
+      footwear: "",
+      preexisting_callus_leading_to_ulcer: "",
       currentlesion_toe_right: "",
       currentlesion_toe_left: "",
       currentlesion_webspace_right: "",
@@ -47,8 +47,8 @@ export default function Estimatedtimeoffootlesion() {
     },
     validationSchema: Yup.object({
       currentlesion_toe_right: Yup.string().required("required"),
-      footwear:Yup.string().required("required"),
-      preexisting_callus_leading_to_ulcer:Yup.string().required("required"),
+      footwear: Yup.string().required("required"),
+      preexisting_callus_leading_to_ulcer: Yup.string().required("required"),
       wagnergrade: Yup.string().required("required")
     }),
 
@@ -56,7 +56,7 @@ export default function Estimatedtimeoffootlesion() {
       alert(JSON.stringify(values, null, 2));
     }
   });
-  const footwear= [
+  const footwear = [
     {
       value: "Injury",
       item: "Injury"
@@ -157,12 +157,12 @@ export default function Estimatedtimeoffootlesion() {
             placeholder="Days"
           />
         </Grid>
-      
+
         <Grid item md={8} xl={8}>
-        <Typography sx={{ fontSize:"18px",fontWeight:"bold",color: 'primary.main' }} >
-                Footwear related
-            </Typography>
-        <SelectCom
+          <Typography sx={{ fontSize: "16px", color: 'primary.main' }} >
+            Footwear related
+          </Typography>
+          <SelectCom
             select={footwear}
             name="footwear"
             label="Footwear realted"
@@ -172,9 +172,9 @@ export default function Estimatedtimeoffootlesion() {
           {formik.touched.footwear && formik.errors.footwear ? (
             <p className="error">*{formik.errors.footwear}*</p>
           ) : null}
-          </Grid>
-<Grid item md={8} xl={8}>
-<RadioCom
+        </Grid>
+        <Grid item md={8} xl={8}>
+          <RadioCom
             radio={callus}
             OnChange={formik.handleChange}
             FormLabel="Preexisting callus leading to ulcer"
@@ -182,13 +182,13 @@ export default function Estimatedtimeoffootlesion() {
           {formik.touched.preexisting_callus_leading_to_ulcer && formik.errors.preexisting_callus_leading_to_ulcer ? (
             <p className="error">*{formik.errors.preexisting_callus_leading_to_ulcer}*</p>
           ) : null}
-</Grid>
-          </Grid>
+        </Grid>
+      </Grid>
 
       <TableContainer>
         <Table sx={{ width: 520, marginTop: '1rem' }} aria-label="simple table">
           <TableBody>
-            <TableRow  sx={{ width:"300",fontSize:"18px",fontWeight:"bold",color: 'primary.main' }}>
+            <TableRow sx={{ width: "300", fontSize: "16px", color: 'primary.main' }}>
               Site of the Current Lesions
             </TableRow>
             {rows.map((row, i) => (
